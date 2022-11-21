@@ -90,10 +90,10 @@ module.exports = {
         'no-iterator': `error`,
         'no-throw-literal': `error`,
         // usually best to avoid leaving TODO comments in the codebase but sometimes
-        // it's necessary because the issue is not immediately fixable (e.g. "delete htis
+        // it's necessary because the issue is not immediately fixable (e.g. "delete this
         // once <package> fixes <issue>)
         // It's also helpful to flag stuff to come back to before committing work.
-        // Use xxx to flag issues you want to fix before commiting, and
+        // Use xxx to flag issues you want to fix before committing, and
         // allow use of todo for things that cannot be addressed.
         'no-warning-comments': [
           `error`,
