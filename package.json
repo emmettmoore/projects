@@ -4,8 +4,9 @@
   "description": "## Version node.js: v18.12.1 npm: v8.19.2",
   "scripts": {
     "lint": "eslint .",
+    "prepare": "husky install",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "types": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
