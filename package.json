@@ -1,0 +1,18 @@
+{
+  "name": "emmettmoore",
+  "version": "1.0.0",
+  "description": "## Version node.js: v18.12.1 npm: v8.19.2",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emmettmoore/node-monorepo.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/emmettmoore/node-monorepo/issues"
+  },
+  "homepage": "https://github.com/emmettmoore/node-monorepo#readme"
+}
