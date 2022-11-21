@@ -41,7 +41,7 @@ module.exports = {
             format: null,
           },
           {
-            selector: `objectliteralMethod`,
+            selector: `objectLiteralMethod`,
             format: null,
           },
           {
@@ -60,10 +60,6 @@ module.exports = {
           },
           {
             selector: `typeLike`,
-            format: [`PascalCase`],
-          },
-          {
-            selector: `enumMember`,
             format: [`PascalCase`],
           },
           {
