@@ -25,8 +25,8 @@ export enum AdventDay {
 }
 
 export interface SolutionDay {
-  part1: () => string;
-  part2: () => string;
+  part1: () => string | number;
+  part2: () => string | number;
 }
 
 export type Solution = {

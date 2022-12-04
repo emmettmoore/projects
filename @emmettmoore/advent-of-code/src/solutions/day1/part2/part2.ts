@@ -1,5 +1,19 @@
-import { NotImplementedError } from '../../../errors';
+import _ from 'lodash';
 
-export default (): string => {
-  throw new NotImplementedError();
+import getElfSnackPacks from '../getElfSnackPacks';
+
+export default (): number => {
+  const snackPacks = getElfSnackPacks();
+
+  const sums: Array<number> = snackPacks.map((snackPack): number => {
+    return _.sum(snackPack);
+  });
+
+  const sorted = sums.sort((a, b) => {
+    return a - b;
+  });
+
+  const top3 = sorted.slice(sums.length - 3);
+
+  return _.sum(top3);
 };
