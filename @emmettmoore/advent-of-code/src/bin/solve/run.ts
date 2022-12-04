@@ -16,7 +16,7 @@ const run = (problem: string): void => {
 
   const solution = solutions[adventDay];
 
-  let part1: string;
+  let part1: string | number;
   try {
     part1 = solution.part1();
   } catch (err) {
@@ -27,7 +27,7 @@ const run = (problem: string): void => {
     }
   }
 
-  let part2: string;
+  let part2: string | number;
   try {
     part2 = solution.part2();
   } catch (err) {
