@@ -1,18 +1,18 @@
 /**
- * Given a list of numbers in an input file of format, with new lines
- * separating each number, and additional blank lines separating sections,
- * return a list of sections where each section is a list of numbers.
+ * Given a raw input string, with new lines separating each input,
+ * and additional blank lines separating grouped sections,
+ * return a list of sections where each section is a list of strings.
  */
-export default (rawInput: string): Array<Array<number>> => {
+export default (rawInput: string): Array<Array<string>> => {
   const allLines = rawInput.split(`\n`);
 
-  const sections = new Array<Array<number>>();
+  const sections = new Array<Array<string>>();
 
   let i = 0;
   let currentSection = null;
   while (i < allLines.length) {
     if (currentSection === null) {
-      currentSection = new Array<number>();
+      currentSection = new Array<string>();
     }
 
     const nextLine = allLines[i];
@@ -20,7 +20,7 @@ export default (rawInput: string): Array<Array<number>> => {
       sections.push(currentSection);
       currentSection = null;
     } else {
-      currentSection.push(parseInt(nextLine, 10));
+      currentSection.push(nextLine);
     }
 
     if (currentSection && i === allLines.length - 1) {

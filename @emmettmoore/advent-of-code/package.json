@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "types": "tsc --noEmit",
+    "test": "jest",
     "solve": "ts-node src/bin/solve/run.ts -- $npm_config_problem",
     "setup": "test -n \"$npm_config_problem\" && test ! -d src/solutions/day$npm_config_problem && cp -r src/template/day src/solutions/day$npm_config_problem"
   },
