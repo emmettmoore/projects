@@ -1,3 +1,4 @@
 import stringToAdventDay from './stringToAdventDay';
+import getInput from './getInput';
 
-export { stringToAdventDay };
+export { stringToAdventDay, getInput };

@@ -1,3 +1,5 @@
+import { NotImplementedError } from '../../../errors';
+
 export default (): string => {
-  throw new Error(`Unsolved`);
+  throw new NotImplementedError();
 };

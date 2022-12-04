@@ -1,10 +1,10 @@
 /* eslint-disable no-console */
 import fs from 'fs';
 
-export default (): string => {
+export default (path: string): string => {
   let data: string;
   try {
-    data = fs.readFileSync(`./input.txt`, `utf8`);
+    data = fs.readFileSync(path, `utf8`);
   } catch (err) {
     console.error(err);
     throw err;

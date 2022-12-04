@@ -1,10 +1,11 @@
 import { Solution, AdventDay } from '../types';
 
 import getNotImplementedSolution from './getNotImplementedSolution';
+import day1 from './day1';
 
 export default (): Solution => {
   return {
-    [AdventDay.Day1]: getNotImplementedSolution(),
+    [AdventDay.Day1]: day1,
     [AdventDay.Day2]: getNotImplementedSolution(),
     [AdventDay.Day3]: getNotImplementedSolution(),
     [AdventDay.Day4]: getNotImplementedSolution(),
