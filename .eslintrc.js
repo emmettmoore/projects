@@ -2,6 +2,7 @@ module.exports = {
   ignorePatterns: [`!.eslintrc.js`],
   overrides: [
     { files: `.eslintrc.js`, env: { node: true } },
+    { files: `jest.config.js`, env: { node: true } },
     {
       files: `*.{js,ts,tsx}`,
       extends: [
@@ -14,13 +15,13 @@ module.exports = {
       parser: `@typescript-eslint/parser`,
       plugins: [`filenames`, `import`, `react`, `react-hooks`],
       parserOptions: {
-        project: [`./tsconfig.json`],
+        project: [`./tsconfig.json`, `./@emmettmoore/*/tsconfig.json`],
       },
       settings: {
         'import/parsers': {
           '@typescript-eslint/parser': [`.ts`, `.tsx`],
         },
-        'import/respolver': {
+        'import/resolver': {
           typescript: {
             // https://github.com/import-js/eslint-import-resolver-typescript/blob/master/README.md#configuration
             alwaysTryTypes: true,
