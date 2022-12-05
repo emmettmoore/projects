@@ -41,9 +41,46 @@ export const myInputToChoice = (myInput: string): Choice => {
   if (myInput === `Y`) {
     return Choice.Paper;
   }
-
   if (myInput === `Z`) {
     return Choice.Scissors;
+  }
+
+  throw new InvalidParsingError();
+};
+
+export const getMyChoiceFromOutcomeAndOpponentChoice = (
+  outcome: Outcome,
+  opponentChoice: Choice
+): Choice => {
+  const mapping: { [outcome in Outcome]: { [choice in Choice]: Choice } } = {
+    [Outcome.Win]: {
+      [Choice.Rock]: Choice.Paper,
+      [Choice.Paper]: Choice.Scissors,
+      [Choice.Scissors]: Choice.Rock,
+    },
+    [Outcome.Draw]: {
+      [Choice.Rock]: Choice.Rock,
+      [Choice.Paper]: Choice.Paper,
+      [Choice.Scissors]: Choice.Scissors,
+    },
+    [Outcome.Loss]: {
+      [Choice.Rock]: Choice.Scissors,
+      [Choice.Paper]: Choice.Rock,
+      [Choice.Scissors]: Choice.Paper,
+    },
+  };
+  return mapping[outcome][opponentChoice];
+};
+
+export const plannedOutcomeInputToOutcome = (input: string): Outcome => {
+  if (input === `X`) {
+    return Outcome.Loss;
+  }
+  if (input === `Y`) {
+    return Outcome.Draw;
+  }
+  if (input === `Z`) {
+    return Outcome.Win;
   }
 
   throw new InvalidParsingError();
