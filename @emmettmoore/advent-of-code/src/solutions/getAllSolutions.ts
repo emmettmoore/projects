@@ -4,13 +4,14 @@ import getNotImplementedSolution from './getNotImplementedSolution';
 import day1 from './day1';
 import day2 from './day2';
 import day3 from './day3';
+import day4 from './day4';
 
 export default (): Solution => {
   return {
     [AdventDay.Day1]: day1,
     [AdventDay.Day2]: day2,
     [AdventDay.Day3]: day3,
-    [AdventDay.Day4]: getNotImplementedSolution(),
+    [AdventDay.Day4]: day4,
     [AdventDay.Day5]: getNotImplementedSolution(),
     [AdventDay.Day6]: getNotImplementedSolution(),
     [AdventDay.Day7]: getNotImplementedSolution(),
