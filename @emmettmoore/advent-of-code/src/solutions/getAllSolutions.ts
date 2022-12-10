@@ -8,6 +8,7 @@ import day4 from './day4';
 import day5 from './day5';
 import day6 from './day6';
 import day7 from './day7';
+import day8 from './day8';
 
 export default (): Solution => {
   return {
@@ -18,7 +19,7 @@ export default (): Solution => {
     [AdventDay.Day5]: day5,
     [AdventDay.Day6]: day6,
     [AdventDay.Day7]: day7,
-    [AdventDay.Day8]: getNotImplementedSolution(),
+    [AdventDay.Day8]: day8,
     [AdventDay.Day9]: getNotImplementedSolution(),
     [AdventDay.Day11]: getNotImplementedSolution(),
     [AdventDay.Day12]: getNotImplementedSolution(),
