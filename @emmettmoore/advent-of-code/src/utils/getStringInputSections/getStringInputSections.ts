@@ -15,13 +15,7 @@ export default (
     });
   }
 
-  return (
-    allLines
-      .map((line) => {
-        return line.split(inlineSeparator);
-      })
-      // new line at end of file creates an extra item.
-      // Remove it.
-      .slice(0, -1)
-  );
+  return allLines.map((line) => {
+    return line.split(inlineSeparator);
+  });
 };
