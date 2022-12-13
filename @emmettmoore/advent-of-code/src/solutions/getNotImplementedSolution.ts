@@ -3,10 +3,10 @@ import { NotImplementedError } from '../errors';
 
 export default (): SolutionDay => {
   return {
-    part1: (): string => {
+    part1: (): Promise<string> => {
       throw new NotImplementedError();
     },
-    part2: (): string => {
+    part2: (): Promise<string> => {
       throw new NotImplementedError();
     },
   };

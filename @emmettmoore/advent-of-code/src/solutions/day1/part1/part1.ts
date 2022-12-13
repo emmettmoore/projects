@@ -2,7 +2,7 @@
 import _ from 'lodash';
 import getElfSnackPacks from '../getElfSnackPacks';
 
-export default (): number => {
+export default async (): Promise<number> => {
   const elfSnackPacks = getElfSnackPacks();
 
   const sums: Array<number> = elfSnackPacks.map((snackPack): number => {

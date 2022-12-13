@@ -1,7 +1,7 @@
 import getData from '../getData';
 import { getStacks, Move, parseMoves } from '../utils';
 
-export default (): string => {
+export default async (): Promise<string> => {
   const stacks = getStacks();
 
   const data = getData();

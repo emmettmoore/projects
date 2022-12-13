@@ -29,7 +29,7 @@ const getCharacterFromRucksack = (rucksack: string): string => {
   return intersection[0];
 };
 
-export default (): number => {
+export default async (): Promise<number> => {
   // only one data section in this problem
   const allRucksacks = getData()[0];
 

@@ -136,7 +136,7 @@ const findMaxScenicNumber = (forest: Forest): number => {
   return currMax;
 };
 
-export default (): number => {
+export default async (): Promise<number> => {
   const data = getData();
 
   const numRows = data.length;

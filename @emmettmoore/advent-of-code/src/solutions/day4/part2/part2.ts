@@ -23,7 +23,7 @@ const isAssignmentOverlapping = (assignmentPair: Array<string>): boolean => {
   );
 };
 
-export default (): number => {
+export default async (): Promise<number> => {
   // [ [`1-2`, 34-36`], ... ]
   const data = getData();
 

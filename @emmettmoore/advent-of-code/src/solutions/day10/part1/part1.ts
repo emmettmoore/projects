@@ -3,7 +3,7 @@ import getSignals from '../getSignals';
 
 const INTERESTING_CYCLES = [20, 60, 100, 140, 180, 220];
 
-export default (): number => {
+export default async (): Promise<number> => {
   const instructions = getInstructions();
 
   const signals = getSignals(instructions);

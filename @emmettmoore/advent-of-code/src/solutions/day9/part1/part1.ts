@@ -6,7 +6,7 @@ import {
   getTailPositions,
 } from '../positionUtils';
 
-export default (): number => {
+export default async (): Promise<number> => {
   const moves = getData();
 
   const headPositions = getHeadPositions(moves);

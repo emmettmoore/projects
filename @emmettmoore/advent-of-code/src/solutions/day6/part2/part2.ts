@@ -1,7 +1,7 @@
 import getData from '../getData';
 
 const START_OF_MESSAGE_MARKER_LENGTH = 14;
-export default (): number => {
+export default async (): Promise<number> => {
   const data = getData();
 
   let i = START_OF_MESSAGE_MARKER_LENGTH;

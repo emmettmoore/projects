@@ -3,7 +3,7 @@ import { getAllSolutions } from '../../solutions';
 import { stringToAdventDay } from '../../utils';
 import { NotImplementedError } from '../../errors';
 
-const run = (problem: string): void => {
+const run = async (problem: string): Promise<void> => {
   const solutions = getAllSolutions();
 
   const adventDay = stringToAdventDay(`Day${problem}`);
@@ -18,7 +18,7 @@ const run = (problem: string): void => {
 
   let part1: string | number;
   try {
-    part1 = solution.part1();
+    part1 = await solution.part1();
   } catch (err) {
     if (err instanceof NotImplementedError) {
       part1 = `Not implemented`;
@@ -29,7 +29,7 @@ const run = (problem: string): void => {
 
   let part2: string | number;
   try {
-    part2 = solution.part2();
+    part2 = await solution.part2();
   } catch (err) {
     if (err instanceof NotImplementedError) {
       part2 = `Not implemented`;

@@ -9,7 +9,7 @@ import {
 } from '../utils';
 import getData from '../getData';
 
-export default (): number => {
+export default async (): Promise<number> => {
   const data = getData();
   const allScores = data.map(([opponentInput, myInput]) => {
     const opponentChoice = opponentInputToChoice(opponentInput);

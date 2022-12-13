@@ -25,7 +25,7 @@ const getElfGroups = (rucksacks: Array<string>): Array<Array<string>> => {
   return elfGroups;
 };
 
-export default (): number => {
+export default async (): Promise<number> => {
   // only one data section in this problem
   const allRucksacks = getData()[0];
 

@@ -162,7 +162,7 @@ const getNumVisibleTrees = (forest: Forest): number => {
   return count;
 };
 
-export default (): number => {
+export default async (): Promise<number> => {
   const data = getData();
 
   const numRows = data.length;

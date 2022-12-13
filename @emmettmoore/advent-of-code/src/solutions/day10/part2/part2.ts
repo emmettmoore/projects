@@ -23,7 +23,7 @@ const renderScreen = (signals: Array<number>): void => {
   console.log();
 };
 
-export default (): string => {
+export default async (): Promise<string> => {
   const instructions = getInstructions();
 
   const signals = getSignals(instructions);

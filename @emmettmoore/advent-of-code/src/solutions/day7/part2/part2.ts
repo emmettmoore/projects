@@ -12,7 +12,7 @@ import {
 const TOTAL_DISK_SPACE = 70000000;
 const UNUSED_NEEDED_FOR_UPDATE = 30000000;
 
-export default (): number => {
+export default async (): Promise<number> => {
   const data = getData();
 
   const lines = getInputLines(data);

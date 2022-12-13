@@ -9,7 +9,7 @@ import {
 } from '../utils';
 
 const TARGET_SIZE = 100000;
-export default (): number => {
+export default async (): Promise<number> => {
   const data = getData();
 
   const lines = getInputLines(data);

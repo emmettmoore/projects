@@ -2,7 +2,7 @@ import getData from '../getData';
 import { getStacks, Move, parseMoves } from '../utils';
 import { InvalidParsingError } from '../../../errors';
 
-export default (): string => {
+export default async (): Promise<string> => {
   const stacks = getStacks();
 
   const data = getData();
