@@ -11,12 +11,18 @@ const initializeMonkeyInspectionTotals = (): Array<number> => {
   return [0, 0, 0, 0, 0, 0, 0, 0];
 };
 
+const testWorryLevel = (worryLevel: number, divisor: number): boolean => {
+  return worryLevel % divisor === 0;
+};
+
 const getThrows = (monkey: Monkey): Array<Throw> => {
   return monkey.items.map((worryLevel) => {
     let w = monkey.operation(worryLevel);
     w = Math.floor(w / 3);
 
-    const nextMonkey = monkey.test(w);
+    const nextMonkey = testWorryLevel(w, monkey.divisor)
+      ? monkey.testSuccessMonkey
+      : monkey.testFailMonkey;
 
     return {
       monkey: nextMonkey,
@@ -29,19 +35,6 @@ export default (): number => {
   const monkies = getData();
   const monkeyInspectionTotals = initializeMonkeyInspectionTotals();
 
-  /*
-  After each monkey inspects an item but before it tests your worry level, 
-  your relief that the monkey's inspection didn't damage the item causes 
-  your worry level to be divided by three and rounded down to the nearest integer.
-  */
-
-  /* 
-    inspect and throw all items in order listed.
-
-    monkey 0 goes first, then 1, etc.
-
-    item goes to end of recipient monkey list
-  */
   for (let round = 0; round < NUM_ROUNDS; round += 1) {
     for (let m = 0; m < monkies.length; m += 1) {
       const throws = getThrows(monkies[m]);
