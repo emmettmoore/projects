@@ -16,7 +16,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "ES2016"
+    "target": "ES2021"
   },
   "include": [
     ".eslintrc.js",
