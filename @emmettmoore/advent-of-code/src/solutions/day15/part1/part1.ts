@@ -3,7 +3,7 @@ import getData from '../getData';
 
 import { getRange, getUniqueCoordsAtY } from '../utils';
 
-const TARGET_Y = 2000000;
+const TARGET_Y = 10; // 2000000;
 
 export default async (): Promise<number> => {
   const scans = getData();

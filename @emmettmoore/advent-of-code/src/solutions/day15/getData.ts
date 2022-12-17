@@ -11,7 +11,7 @@ export interface Scan {
 }
 
 export default (): Array<Scan> => {
-  const rawInput = getInput(`./input/d15p1.txt`);
+  const rawInput = getInput(`./input/d15p1small.txt`);
   const sections = getSectionsFromRawInput(rawInput)[0];
 
   return sections
