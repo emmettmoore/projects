@@ -1,37 +1,76 @@
-import { forEachSeries } from 'p-iteration';
-import getData from '../getData';
+import getData, { Scan, Coordinate } from '../getData';
 
-import { getRange, getUniqueCoordsAtY } from '../utils';
+import { getCoordinateKey, getManhattanDist } from '../utils';
 
 const MIN_DIM = 0;
-const MAX_DIM = 20; // 4000000;
+const MAX_DIM = 4_000_000;
+
+const COORD_MULT = [
+  [-1, 1],
+  [1, -1],
+  [-1, -1],
+  [1, 1],
+];
+
+const testCoordinate = (
+  c: Coordinate,
+  scans: Array<Scan>,
+  beaconSet: Set<string>
+): boolean => {
+  return Boolean(
+    scans.every((scan) => {
+      return Boolean(
+        getManhattanDist(c, scan.source) > scan.manhattanDistance &&
+          !beaconSet.has(getCoordinateKey(c))
+      );
+    })
+  );
+};
+
+const checkAllPerimeterCoords = (
+  scans: Array<Scan>,
+  beaconSet: Set<string>
+): Coordinate | null => {
+  for (let i = 0; i < scans.length; i += 1) {
+    const scan = scans[i];
+    const { source, manhattanDistance } = scan;
+    const perimeterDist = manhattanDistance + 1;
+
+    for (let dx = 0; dx < perimeterDist; dx += 1) {
+      const dy = perimeterDist - dx;
+      for (let j = 0; j < COORD_MULT.length; j += 1) {
+        const [mx, my] = COORD_MULT[j];
+        const c = {
+          x: source.x + dx * mx,
+          y: source.y + dy * my,
+        };
+
+        if (c.x < MIN_DIM || c.y < MIN_DIM || c.x > MAX_DIM || c.y > MAX_DIM) {
+          continue;
+        }
+        if (testCoordinate(c, scans, beaconSet)) {
+          return c;
+        }
+      }
+    }
+  }
+
+  return null;
+};
 
 export default async (): Promise<number> => {
   const scans = getData();
 
-  for (let y = MIN_DIM; y < MAX_DIM; y += 1) {
-    let min: number | null = null;
-    let max: number | null = null;
+  const beaconSet = new Set<string>();
+  scans.forEach(({ closestBeacon }) => {
+    beaconSet.add(getCoordinateKey(closestBeacon));
+  });
 
-    await forEachSeries(scans, async (scan) => {
-      const scanRangeAtY = await getRange(scan, y);
-      if (!scanRangeAtY) {
-        return;
-      }
+  const c = checkAllPerimeterCoords(scans, beaconSet);
 
-      min = min === null ? scanRangeAtY.min : Math.min(min, scanRangeAtY.min);
-      max = max === null ? scanRangeAtY.max : Math.max(max, scanRangeAtY.max);
-    });
-
-    if (min === null || max === null) {
-      throw new Error();
-    }
-
-    console.log({ min, max });
-    if (min > MIN_DIM || max < MAX_DIM) {
-      break;
-    }
+  if (c === null) {
+    throw new Error();
   }
 
-  return 0;
+  return c.x * MAX_DIM + c.y;
 };

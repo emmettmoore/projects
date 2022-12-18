@@ -1,5 +1,7 @@
 import { Coordinate, Scan } from './getData';
 
+class InvalidCoordinateKeyError extends Error {}
+
 interface Range {
   min: number;
   max: number;
@@ -9,6 +11,19 @@ export const getCoordinateKey = (coordinate: Coordinate): string => {
   return `x${coordinate.x}y${coordinate.y}`;
 };
 
+export const keyToCoordinate = (key: string): Coordinate => {
+  if (!key.startsWith(`x`) && !key.includes(`y`)) {
+    throw new InvalidCoordinateKeyError();
+  }
+  const [x, y] = key
+    .slice(1)
+    .split(`y`)
+    .map((c) => {
+      return parseInt(c, 10);
+    });
+
+  return { x, y };
+};
 export const getManhattanDist = (a: Coordinate, b: Coordinate): number => {
   return Math.abs(a.x - b.x) + Math.abs(a.y - b.y);
 };

@@ -1,5 +1,7 @@
 import { getSectionsFromRawInput, getInput } from '../../utils';
 
+import { getManhattanDist } from './utils';
+
 export interface Coordinate {
   x: number;
   y: number;
@@ -8,10 +10,11 @@ export interface Coordinate {
 export interface Scan {
   source: Coordinate;
   closestBeacon: Coordinate;
+  manhattanDistance: number;
 }
 
 export default (): Array<Scan> => {
-  const rawInput = getInput(`./input/d15p1small.txt`);
+  const rawInput = getInput(`./input/d15p1.txt`);
   const sections = getSectionsFromRawInput(rawInput)[0];
 
   return sections
@@ -35,6 +38,7 @@ export default (): Array<Scan> => {
       return {
         source,
         closestBeacon,
+        manhattanDistance: getManhattanDist(source, closestBeacon),
       };
     });
 };
