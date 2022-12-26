@@ -11,7 +11,6 @@ export const produceSand = (cave: Cave): boolean => {
   };
 
   let stuckAtSource = false;
-  // eslint-disable-next-line no-constant-condition
   while (true) {
     // straight down
     if (p.y + 1 >= cave.length) {

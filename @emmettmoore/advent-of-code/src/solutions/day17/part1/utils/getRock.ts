@@ -1,0 +1,140 @@
+import { Fill } from './types';
+import { NUM_ROCK_TYPES } from './constants';
+
+export default (rockIndex: number): Array<Array<Fill>> => {
+  if (rockIndex % NUM_ROCK_TYPES === 0) {
+    return [
+      [
+        Fill.Air,
+        Fill.Air,
+        Fill.NewRock,
+        Fill.NewRock,
+        Fill.NewRock,
+        Fill.NewRock,
+        Fill.Air,
+      ],
+    ];
+  }
+  if (rockIndex % NUM_ROCK_TYPES === 1) {
+    return [
+      [
+        Fill.Air,
+        Fill.Air,
+        Fill.Air,
+        Fill.NewRock,
+        Fill.Air,
+        Fill.Air,
+        Fill.Air,
+      ],
+      [
+        Fill.Air,
+        Fill.Air,
+        Fill.NewRock,
+        Fill.NewRock,
+        Fill.NewRock,
+        Fill.Air,
+        Fill.Air,
+      ],
+      [
+        Fill.Air,
+        Fill.Air,
+        Fill.Air,
+        Fill.NewRock,
+        Fill.Air,
+        Fill.Air,
+        Fill.Air,
+      ],
+    ];
+  }
+  if (rockIndex % NUM_ROCK_TYPES === 2) {
+    return [
+      [
+        Fill.Air,
+        Fill.Air,
+        Fill.Air,
+        Fill.Air,
+        Fill.NewRock,
+        Fill.Air,
+        Fill.Air,
+      ],
+      [
+        Fill.Air,
+        Fill.Air,
+        Fill.Air,
+        Fill.Air,
+        Fill.NewRock,
+        Fill.Air,
+        Fill.Air,
+      ],
+      [
+        Fill.Air,
+        Fill.Air,
+        Fill.NewRock,
+        Fill.NewRock,
+        Fill.NewRock,
+        Fill.Air,
+        Fill.Air,
+      ],
+    ];
+  }
+  if (rockIndex % NUM_ROCK_TYPES === 3) {
+    return [
+      [
+        Fill.Air,
+        Fill.Air,
+        Fill.NewRock,
+        Fill.Air,
+        Fill.Air,
+        Fill.Air,
+        Fill.Air,
+      ],
+      [
+        Fill.Air,
+        Fill.Air,
+        Fill.NewRock,
+        Fill.Air,
+        Fill.Air,
+        Fill.Air,
+        Fill.Air,
+      ],
+      [
+        Fill.Air,
+        Fill.Air,
+        Fill.NewRock,
+        Fill.Air,
+        Fill.Air,
+        Fill.Air,
+        Fill.Air,
+      ],
+      [
+        Fill.Air,
+        Fill.Air,
+        Fill.NewRock,
+        Fill.Air,
+        Fill.Air,
+        Fill.Air,
+        Fill.Air,
+      ],
+    ];
+  }
+  return [
+    [
+      Fill.Air,
+      Fill.Air,
+      Fill.NewRock,
+      Fill.NewRock,
+      Fill.Air,
+      Fill.Air,
+      Fill.Air,
+    ],
+    [
+      Fill.Air,
+      Fill.Air,
+      Fill.NewRock,
+      Fill.NewRock,
+      Fill.Air,
+      Fill.Air,
+      Fill.Air,
+    ],
+  ];
+};

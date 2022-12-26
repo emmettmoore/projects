@@ -6,7 +6,6 @@ export default async (): Promise<number> => {
   const cave = await initCave(data);
 
   let numGrains = 0;
-  // eslint-disable-next-line no-constant-condition
   while (true) {
     const fellIntoAbyss = await produceSand(cave);
     if (fellIntoAbyss) {
