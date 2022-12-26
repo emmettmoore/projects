@@ -11,8 +11,8 @@ import {
   maybeAddHeightToChamber,
   resetChamber,
   Fill,
-} from './utils';
-import { applyGravity } from './utils';
+  applyGravity,
+} from '../utils';
 
 export default async (): Promise<number> => {
   const directions = getData();

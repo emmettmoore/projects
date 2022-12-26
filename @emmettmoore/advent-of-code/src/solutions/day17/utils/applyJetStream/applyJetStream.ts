@@ -1,5 +1,5 @@
 /* eslint-disable no-constant-condition */
-import { Direction } from '../../../getData';
+import { Direction } from '../../getData';
 import { Chamber } from '../types';
 
 import maybeApplyJetStreamLeft from './maybeApplyJetStreamLeft';
