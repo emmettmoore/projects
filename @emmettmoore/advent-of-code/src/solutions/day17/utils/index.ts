@@ -1,7 +1,7 @@
 import applyJetStream from './applyJetStream';
 import applyGravity from './applyGravity';
 import addRockToChamber from './addRockToChamber';
-import maybeAddHeightToChamber from './maybeAddHeightToChamber';
+import addExtraSpaceToChamber from './addExtraSpaceToChamber';
 import mapNewRocksToRocks from './mapNewRocksToRocks';
 import isAtRest from './isAtRest';
 import getRock from './getRock';
@@ -17,8 +17,8 @@ export {
   getChamberHeight,
   applyJetStream,
   applyGravity,
+  addExtraSpaceToChamber,
   addRockToChamber,
-  maybeAddHeightToChamber,
   mapNewRocksToRocks,
   isAtRest,
   getRock,

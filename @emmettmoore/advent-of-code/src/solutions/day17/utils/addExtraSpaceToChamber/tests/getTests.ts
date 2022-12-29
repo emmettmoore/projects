@@ -16,14 +16,8 @@ export default (): Array<Test> => {
   return [
     {
       name: `dash rock on not on floor is not at rest`,
-      chamber: mapChamber([
-        `.......`,
-        `.......`,
-        `.......`,
-        `.......`,
-        `..####.`,
-      ]),
-      output: mapChamber([`..####.`]),
+      chamber: mapChamber([`..####.`]),
+      output: mapChamber([`.......`, `.......`, `.......`, `..####.`]),
     },
     {
       name: `dash rock on not on floor is not at rest`,
@@ -35,6 +29,9 @@ export default (): Array<Test> => {
         `..####.`,
       ]),
       output: mapChamber([
+        `.......`,
+        `.......`,
+        `.......`,
         `..#....`,
         `..#....`,
         `..#....`,
@@ -45,10 +42,6 @@ export default (): Array<Test> => {
     {
       name: `dash rock on not on floor is not at rest`,
       chamber: mapChamber([
-        `.......`,
-        `.......`,
-        `.......`,
-        `.......`,
         `..#....`,
         `..#....`,
         `####...`,
@@ -57,6 +50,9 @@ export default (): Array<Test> => {
         `..####.`,
       ]),
       output: mapChamber([
+        `.......`,
+        `.......`,
+        `.......`,
         `..#....`,
         `..#....`,
         `####...`,

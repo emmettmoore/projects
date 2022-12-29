@@ -14,11 +14,5 @@ export default (chamber: Chamber): Chamber => {
     y += 1;
   }
 
-  const newChamber = chamber.slice(y);
-
-  return [
-    [Fill.Air, Fill.Air, Fill.Air, Fill.Air, Fill.Air, Fill.Air, Fill.Air],
-    [Fill.Air, Fill.Air, Fill.Air, Fill.Air, Fill.Air, Fill.Air, Fill.Air],
-    [Fill.Air, Fill.Air, Fill.Air, Fill.Air, Fill.Air, Fill.Air, Fill.Air],
-  ].concat(newChamber) as Chamber;
+  return chamber.slice(y);
 };
