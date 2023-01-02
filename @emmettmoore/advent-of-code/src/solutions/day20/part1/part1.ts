@@ -3,17 +3,6 @@ import mixElement from './mixElement';
 
 import { Element } from './types';
 
-const logElements = (elements: Array<Element>): void => {
-  // eslint-disable-next-line no-console
-  console.log(
-    elements
-      .map(({ value: v }) => {
-        return v;
-      })
-      .join(`, `)
-  );
-};
-
 export default async (): Promise<number> => {
   const data = getData();
 
@@ -37,8 +26,6 @@ export default async (): Promise<number> => {
   const indexOfZero = elements.findIndex((e) => {
     return e.value === 0;
   });
-
-  logElements(elements);
 
   return (
     elements[(indexOfZero + 1000) % elements.length].value +
