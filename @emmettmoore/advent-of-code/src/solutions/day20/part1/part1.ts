@@ -1,7 +1,7 @@
 import getData from '../getData';
-import mixElement from './mixElement';
+import mixElement from '../mixElement';
 
-import { Element } from './types';
+import { Element } from '../types';
 
 export default async (): Promise<number> => {
   const data = getData();
