@@ -33,7 +33,7 @@ export type Row =
     };
 
 export default (): Array<Row> => {
-  const rawInput = getInput(`./input/d21.txt`);
+  const rawInput = getInput(`./input/d21small.txt`);
   const rawRows = getStringInputSections(rawInput, ` `);
 
   const rows = new Array<Row>();

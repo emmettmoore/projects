@@ -1,51 +1,17 @@
 import getData, { Row } from '../getData';
+import { calculateNodeValue } from '../utils';
 
-const getRootPathKeys = (
+const populateMaps = (
+  rows: Array<Row>,
   map: { [key: string]: Row },
-  root: Row
-): Array<string> => {
-  const rootPathKeys = new Array<string>();
-  const queue = new Array<Row>(root);
-
-  while (true) {
-    const elem: Row | undefined = queue.pop();
-
-    if (elem === undefined) {
-      break;
+  valueMemo: Map<string, number>
+): void => {
+  rows.forEach((row) => {
+    map[row.key] = row;
+    if (row.kind === `value`) {
+      valueMemo.set(row.key, row.value);
     }
-
-    rootPathKeys.push(elem.key);
-
-    if (elem.kind !== `value`) {
-      queue.push(map[elem.left]);
-      queue.push(map[elem.right]);
-    }
-  }
-
-  return rootPathKeys;
-};
-
-const executeOperation = (
-  valueMemo: Map<string, number>,
-  leftValue: number,
-  rightValue: number,
-  operation: `*` | `/` | `-` | `+`
-): number => {
-  if (operation === `*`) {
-    return leftValue * rightValue;
-  }
-  if (operation === `/`) {
-    return leftValue / rightValue;
-  }
-  if (operation === `+`) {
-    return leftValue + rightValue;
-  }
-  if (operation === `-`) {
-    return leftValue - rightValue;
-  }
-
-  const exhaustiveCheck: never = operation;
-  return exhaustiveCheck;
+  });
 };
 
 export default async (): Promise<number> => {
@@ -54,12 +20,7 @@ export default async (): Promise<number> => {
   const map: { [key: string]: Row } = {};
   const valueMemo = new Map<string, number>();
 
-  rows.forEach((row) => {
-    map[row.key] = row;
-    if (row.kind === `value`) {
-      valueMemo.set(row.key, row.value);
-    }
-  });
+  populateMaps(rows, map, valueMemo);
 
   const root = map[`root`];
 
@@ -67,50 +28,5 @@ export default async (): Promise<number> => {
     throw new Error();
   }
 
-  const rootPathKeys = getRootPathKeys(map, root);
-
-  while (true) {
-    let isMissingValue = false;
-    for (let i = 0; i < rootPathKeys.length; i += 1) {
-      const key = rootPathKeys[i];
-
-      if (valueMemo.has(key)) {
-        continue;
-      }
-
-      const row = map[key];
-
-      if (row.kind === `value`) {
-        valueMemo.set(key, row.value);
-        continue;
-      }
-
-      const leftValue = valueMemo.get(row.left);
-      const rightValue = valueMemo.get(row.right);
-      if (leftValue !== undefined && rightValue !== undefined) {
-        const value = executeOperation(
-          valueMemo,
-          leftValue,
-          rightValue,
-          row.kind
-        );
-
-        valueMemo.set(key, value);
-        continue;
-      }
-      isMissingValue = true;
-    }
-
-    if (!isMissingValue) {
-      break;
-    }
-  }
-
-  const rootValue = valueMemo.get(root.key);
-
-  if (rootValue === undefined) {
-    throw new Error(`unexpected root value`);
-  }
-
-  return rootValue;
+  return calculateNodeValue(map, valueMemo, root);
 };
