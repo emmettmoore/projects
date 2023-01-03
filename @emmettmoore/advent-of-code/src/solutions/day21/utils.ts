@@ -26,10 +26,10 @@ export const getRootPathKeys = (
 };
 
 export const executeOperation = (
-  leftValue: number,
-  rightValue: number,
+  leftValue: bigint,
+  rightValue: bigint,
   operation: `*` | `/` | `-` | `+`
-): number => {
+): bigint => {
   if (operation === `*`) {
     return leftValue * rightValue;
   }
@@ -49,9 +49,9 @@ export const executeOperation = (
 
 export const calculateNodeValue = (
   map: { [key: string]: Row },
-  valueMemo: Map<string, number>,
+  valueMemo: Map<string, bigint>,
   node: Row
-): number => {
+): bigint => {
   const rootPathKeys = getRootPathKeys(map, node);
 
   while (true) {

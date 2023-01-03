@@ -4,7 +4,7 @@ import { calculateNodeValue } from '../utils';
 const populateMaps = (
   rows: Array<Row>,
   map: { [key: string]: Row },
-  valueMemo: Map<string, number>
+  valueMemo: Map<string, bigint>
 ): void => {
   rows.forEach((row) => {
     map[row.key] = row;
@@ -18,7 +18,7 @@ export default async (): Promise<number> => {
   const rows = getData();
 
   const map: { [key: string]: Row } = {};
-  const valueMemo = new Map<string, number>();
+  const valueMemo = new Map<string, bigint>();
 
   populateMaps(rows, map, valueMemo);
 
@@ -28,5 +28,5 @@ export default async (): Promise<number> => {
     throw new Error();
   }
 
-  return calculateNodeValue(map, valueMemo, root);
+  return Number(calculateNodeValue(map, valueMemo, root));
 };

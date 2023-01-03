@@ -5,7 +5,7 @@ export type Row =
   | {
       kind: `value`;
       key: string;
-      value: number;
+      value: bigint;
     }
   | {
       kind: `*`;
@@ -33,7 +33,7 @@ export type Row =
     };
 
 export default (): Array<Row> => {
-  const rawInput = getInput(`./input/d21small.txt`);
+  const rawInput = getInput(`./input/d21.txt`);
   const rawRows = getStringInputSections(rawInput, ` `);
 
   const rows = new Array<Row>();
@@ -44,7 +44,7 @@ export default (): Array<Row> => {
       rows.push({
         kind: `value`,
         key,
-        value: parseInt(r[1], 10),
+        value: BigInt(parseInt(r[1], 10)),
       });
     } else if (r[2] === `+` || r[2] === `-` || r[2] === `*` || r[2] == `/`) {
       rows.push({

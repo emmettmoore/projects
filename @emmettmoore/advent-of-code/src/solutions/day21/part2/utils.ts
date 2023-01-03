@@ -16,7 +16,7 @@ export const hasKey = (map: { [key: string]: Row }, node: Row): boolean => {
 
 export const populateValueMemo = (
   rows: Array<Row>,
-  valueMemo: Map<string, number>
+  valueMemo: Map<string, bigint>
 ): void => {
   rows.forEach((row) => {
     if (row.kind === `value`) {
@@ -29,8 +29,8 @@ export const calculateTargetValue = (
   rows: Array<Row>,
   map: { [key: string]: Row },
   node: Row
-): { value: number; next: `left` | `right` | null } => {
-  const valueMemo = new Map<string, number>();
+): { value: bigint; next: `left` | `right` | null } => {
+  const valueMemo = new Map<string, bigint>();
   populateValueMemo(rows, valueMemo);
 
   if (node.kind === `value`) {
@@ -57,11 +57,11 @@ export const calculateTargetValue = (
 };
 
 const getNewTarget = (
-  targetValue: number,
+  targetValue: bigint,
   operation: Operation,
-  oppositeValue: number,
+  oppositeValue: bigint,
   nextPosition: `left` | `right`
-): number => {
+): bigint => {
   if (operation === `+`) {
     return nextPosition === `right`
       ? targetValue - oppositeValue
@@ -91,8 +91,8 @@ export const calculateHumn = async (
   rows: Array<Row>,
   map: { [key: string]: Row },
   node: Row,
-  targetValue: number
-): Promise<number> => {
+  targetValue: bigint
+): Promise<bigint> => {
   if (node.kind === `value`) {
     if (node.key === HUMN) {
       return targetValue;

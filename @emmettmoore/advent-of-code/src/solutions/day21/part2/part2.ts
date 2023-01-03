@@ -1,10 +1,6 @@
 import getData, { Row } from '../getData';
 
-import {
-  calculateTargetValue,
-  populateValueMemo,
-  calculateHumn,
-} from './utils';
+import { calculateTargetValue, calculateHumn } from './utils';
 
 export default async (): Promise<number> => {
   const rows = getData();
@@ -33,8 +29,6 @@ export default async (): Promise<number> => {
 
   const node: Row = rootNext === `left` ? map[root.left] : map[root.right];
 
-  const valueMemo = new Map<string, number>();
-  populateValueMemo(rows, valueMemo);
-
-  return calculateHumn(rows, map, node, targetValue);
+  const result = await calculateHumn(rows, map, node, targetValue);
+  return Number(result);
 };
