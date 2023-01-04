@@ -63,23 +63,29 @@ const getNewTarget = (
   nextPosition: `left` | `right`
 ): bigint => {
   if (operation === `+`) {
-    return nextPosition === `right`
-      ? targetValue - oppositeValue
-      : oppositeValue - targetValue;
+    // target = l + r
+    return targetValue - oppositeValue;
   }
   if (operation === `-`) {
+    // target = l - r
+    // r = l - target
+    // l = target + r
     return nextPosition === `right`
-      ? targetValue + oppositeValue
+      ? oppositeValue - targetValue
       : oppositeValue + targetValue;
   }
   if (operation === `*`) {
-    return nextPosition === `right`
-      ? targetValue / oppositeValue
-      : oppositeValue / targetValue;
+    // target = l * r
+    // r = target / l
+    // l = target / r
+    return targetValue / oppositeValue;
   }
   if (operation === `/`) {
+    // target = l / r
+    // r =  l / target
+    // l =  target * r
     return nextPosition === `right`
-      ? targetValue * oppositeValue
+      ? oppositeValue / targetValue
       : oppositeValue * targetValue;
   }
 
