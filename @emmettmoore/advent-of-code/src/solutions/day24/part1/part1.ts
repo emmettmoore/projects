@@ -1,28 +1,34 @@
-import wait from 'waait';
-import { Fill, Coordinate, Grid } from '../types';
+import { Visited, Coordinate } from '../types';
 
 import getData from '../getData';
 
-import { getCandidates, logGrid, getNextGrid, getGridKey } from '../utils';
+import { getCandidates } from '../utils';
 
 export default async (): Promise<number> => {
   const { grid, start, end } = getData();
 
+  const rows = grid.length - 2;
+  const columns = grid[0].length - 2;
+
+  const visited: Visited = new Array(rows + 2).fill(undefined).map(() => {
+    return new Array(columns + 2).fill(undefined).map(() => {
+      return new Array(rows * columns).fill(false);
+    });
+  });
+
   const queue = new Array<{
-    grid: Grid;
     location: Coordinate;
     minutes: number;
   }>();
 
-  const visited = new Set<string>();
+  const winds = grid.slice(1, -1).map((line) => {
+    return line.slice(1, line.length - 1);
+  });
 
   queue.push({
-    grid,
     location: start,
     minutes: 0,
   });
-
-  let min = Infinity;
 
   while (true) {
     const current = queue.shift();
@@ -31,35 +37,31 @@ export default async (): Promise<number> => {
       break;
     }
 
-    const { grid: currentGrid, location, minutes } = current;
-    console.log(`minutes: ${minutes}`);
-    // console.log();
-    // logGrid(currentGrid, location);
-    // console.log();
-
+    const { location, minutes } = current;
     if (location.x === end.x && location.y === end.y) {
-      if (minutes < min) {
-        min = minutes;
-      }
-      continue;
+      return minutes;
     }
 
-    const nextGrid = getNextGrid(currentGrid, minutes === 2);
-
-    const candidates = getCandidates(location, nextGrid, start, end);
+    const candidates = getCandidates(
+      winds,
+      location,
+      start,
+      end,
+      rows,
+      columns,
+      minutes + 1,
+      visited
+    );
 
     candidates.forEach((candidate) => {
-      const key = getGridKey(nextGrid, candidate);
-      if (!visited.has(key)) {
-        visited.add(key);
-        queue.push({
-          grid: nextGrid,
-          location: candidate,
-          minutes: minutes + 1,
-        });
-      }
+      queue.push({
+        location: candidate,
+        minutes: minutes + 1,
+      });
+      visited[candidate.y][candidate.x][(minutes + 1) % (rows * columns)] =
+        true;
     });
   }
 
-  return min;
+  throw new Error(`Unexpected: no path`);
 };

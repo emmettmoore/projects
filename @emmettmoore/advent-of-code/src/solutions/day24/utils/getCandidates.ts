@@ -1,20 +1,82 @@
-import { Fill, Coordinate, Grid } from '../types';
+import { Coordinate, Grid, Visited } from '../types';
 
-const hasBlizzard = (fill: Fill): boolean => {
-  if (fill.kind === `wall`) {
+const mod = (n: number, d: number): number => {
+  return ((n % d) + d) % d;
+};
+
+const hasWind = (
+  winds: Grid,
+  location: Coordinate,
+  minutes: number,
+  rows: number,
+  cols: number
+): boolean => {
+  const x = location.x - 1;
+  const y = location.y - 1;
+
+  const southCell = winds[mod(y - minutes, rows)][x];
+  const northCell = winds[mod(y + minutes, rows)][x];
+  const eastCell = winds[y][mod(x - minutes, cols)];
+  const westCell = winds[y][mod(x + minutes, cols)];
+
+  if (
+    southCell.kind === `wall` ||
+    northCell.kind === `wall` ||
+    eastCell.kind === `wall` ||
+    westCell.kind === `wall`
+  ) {
+    throw new Error();
+  }
+
+  return (
+    southCell.blizzard.south ||
+    northCell.blizzard.north ||
+    westCell.blizzard.west ||
+    eastCell.blizzard.east
+  );
+
+  return false;
+};
+
+const canMove = (
+  winds: Grid,
+  location: Coordinate,
+  start: Coordinate,
+  end: Coordinate,
+  rows: number,
+  cols: number,
+  minutes: number,
+  visited: Visited
+): boolean => {
+  const { x, y } = location;
+  if ((y === start.y && x === start.x) || (y === end.y && x === end.x)) {
+    return true;
+  }
+  if (
+    y < 0 || // above top wall
+    y === 0 || // on top wall
+    y > rows || // on bottom wall
+    x === 0 || // left wall
+    x === cols + 1 // right wall
+  ) {
     return false;
   }
 
-  const blizzard = fill.blizzard;
-
-  return blizzard.north || blizzard.south || blizzard.east || blizzard.west;
+  return (
+    !hasWind(winds, location, minutes, rows, cols) &&
+    !visited[y][x][minutes % (rows * cols)]
+  );
 };
 
 export default (
+  winds: Grid,
   location: Coordinate,
-  nextGrid: Grid,
   start: Coordinate,
-  end: Coordinate
+  end: Coordinate,
+  rows: number,
+  cols: number,
+  minutes: number,
+  visited: Visited
 ): Array<Coordinate> => {
   const possibleMoves = [
     { x: location.x, y: location.y },
@@ -24,29 +86,7 @@ export default (
     { x: location.x, y: location.y - 1 },
   ];
 
-  return possibleMoves.filter(({ x, y }) => {
-    if ((x === start.x && y === start.y) || (x === end.x && y === end.y)) {
-      return true;
-    }
-    if (
-      x === 0 ||
-      x === nextGrid[0].length - 1 ||
-      y === 0 ||
-      y === nextGrid.length - 1
-    ) {
-      // wall, minus start positions
-      return false;
-    }
-
-    if (
-      x < 0 ||
-      x > nextGrid[0].length - 1 ||
-      y < 0 ||
-      y > nextGrid.length - 1
-    ) {
-      return false;
-    }
-
-    return !hasBlizzard(nextGrid[y][x]);
+  return possibleMoves.filter((candidate): boolean => {
+    return canMove(winds, candidate, start, end, rows, cols, minutes, visited);
   });
 };

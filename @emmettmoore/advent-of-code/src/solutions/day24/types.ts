@@ -20,3 +20,5 @@ export interface Coordinate {
   x: number;
   y: number;
 }
+
+export type Visited = Array<Array<Array<boolean>>>;
