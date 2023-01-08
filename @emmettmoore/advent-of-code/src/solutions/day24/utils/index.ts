@@ -1,4 +1,5 @@
 import logGrid from './logGrid';
 import getCandidates from './getCandidates';
+import weatherStorm from './weatherStorm';
 
-export { logGrid, getCandidates };
+export { logGrid, weatherStorm, getCandidates };
