@@ -70,7 +70,6 @@ const findMaxFlow = (
  * the total pressure. Cache each distance between each node along the way.
  */
 export default async (): Promise<number> => {
-  return 1;
   const data = getData();
   const map = initMap(data);
 

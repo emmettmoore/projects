@@ -1,7 +1,8 @@
 import { InvalidParsingError } from '../../errors';
 import { getInput } from '../../utils';
 
-type Direction = `<` | `>`;
+export type Direction = `<` | `>`;
+
 export default (): Array<Direction> => {
   const rawInput = getInput(`./input/d17p1.txt`);
 

@@ -87,7 +87,7 @@ module.exports = {
         'import/no-extraneous-dependencies': `error`,
         'import/prefer-default-export': `off`,
         'no-console': `error`,
-        'no-constant-condition': `error`,
+        'no-constant-condition': [`error`, { checkLoops: false }],
         'no-iterator': `error`,
         'no-throw-literal': `error`,
         // usually best to avoid leaving TODO comments in the codebase but sometimes

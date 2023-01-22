@@ -1,39 +1,45 @@
 import getData from '../getData';
+import {
+  getCurrentDirection,
+  mapNewRocksToRocks,
+  getChamberHeight,
+  addRockToChamber,
+  isAtRest,
+  getRock,
+  applyJetStream,
+  resetChamber,
+  addExtraSpaceToChamber,
+  Fill,
+  applyGravity,
+} from '../utils';
 
-const ROCK = `#`;
-const AIR = `.`;
+const NUM_ROCKS_TO_FALL = 2022;
 
-type Rock = `#`;
-type Air = `.`;
-type Fill = Rock | Air;
-type Chamber = Array<Array<Fill>>;
+export default async (): Promise<number> => {
+  const directions = getData();
+  let chamber = new Array<Array<Fill>>();
 
-const WIDTH = 7;
-const HEIGHT = 4;
+  let fallIterations = 0;
+  for (let rockIndex = 0; rockIndex < NUM_ROCKS_TO_FALL; rockIndex += 1) {
+    const rock = getRock(rockIndex);
+    chamber = resetChamber(chamber);
+    chamber = addExtraSpaceToChamber(chamber);
+    addRockToChamber(rock, chamber);
 
-export const logChamber = (chamber: Chamber): void => {
-  chamber.forEach((row) => {
-    // eslint-disable-next-line no-console
-    console.log(row.join(``));
-    // eslint-disable-next-line no-console
-  });
-};
+    while (true) {
+      const direction = getCurrentDirection(directions, fallIterations);
+      fallIterations += 1;
 
-const initChamber = (): Chamber => {
-  return Array(HEIGHT)
-    .fill(null)
-    .map(() => {
-      return new Array<Fill>(WIDTH).fill(AIR);
-    });
-};
+      chamber = applyJetStream(chamber, direction);
 
-const addHeightToChamber = (chamber: Chamber, height: number): Chamber => {
-  return chamber;
-};
+      if (isAtRest(chamber)) {
+        break;
+      }
 
-export default async (): Promise<string> => {
-  const data = getData();
-  const chamber = initChamber();
-  logChamber(chamber);
-  return ``;
+      chamber = applyGravity(chamber);
+    }
+    chamber = mapNewRocksToRocks(chamber);
+  }
+
+  return getChamberHeight(chamber);
 };
