@@ -15,7 +15,7 @@ Once your solution is implemented you can add it to `src/solutions/getAllSolutio
 ### Running a solution
 
 ```sh
-  npm run solve <advent day>
+  npm run solve  -w @emmettmoore/advent-of-code --problem=<advent day>
 ```
 
 This will run all parts of the solution by default.
