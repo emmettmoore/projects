@@ -1,0 +1,22 @@
+{
+  "name": "@emmettmoore/advent-of-code",
+  "version": "0.0.1",
+  "scripts": {
+    "types": "tsc --noEmit",
+    "test": "jest",
+    "solve": "ts-node src/bin/solve/run.ts -- $npm_config_problem",
+    "setup": "test -n \"$npm_config_problem\" && test ! -d src/solutions/day$npm_config_problem && cp -r src/template/day src/solutions/day$npm_config_problem"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.2.3",
+    "@types/lodash": "^4.14.191",
+    "@types/node": "^18.11.10",
+    "jest": "^29.3.1",
+    "lodash": "^4.17.21",
+    "ts-jest": "^29.0.3"
+  },
+  "dependencies": {
+    "p-iteration": "^1.1.8",
+    "waait": "^1.0.5"
+  }
+}
