@@ -1,19 +1,15 @@
 import { getInput, getSectionsFromRawInput } from '../../utils';
 
-interface Node {
-  valve: string;
-  rate: number;
-  next: Array<string>;
-}
+import { Valve } from './utils';
 
-export default (): Array<Array<Node>> => {
+export default (): Array<Valve> => {
   const rawInput = getInput(`./input/d16p1.txt`);
   const sections = getSectionsFromRawInput(rawInput)[0];
 
   return sections.map((section) => {
     const [firstPart, lastPart] = section.split(`;`);
     const s = firstPart
-      .replace(`Valve `, `{ "valve": "`)
+      .replace(`Valve `, `{ "name": "`)
       .replace(` has flow rate=`, `", "rate": `)
       .replace(`;`, `,`);
 
@@ -32,6 +28,7 @@ export default (): Array<Array<Node>> => {
     return {
       ...obj,
       next,
+      isOpen: false,
     };
   });
 };
