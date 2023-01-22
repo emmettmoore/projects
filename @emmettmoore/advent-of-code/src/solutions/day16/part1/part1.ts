@@ -1,10 +1,5 @@
-import getData from '../getData';
+import { NotImplementedError } from '../../../errors';
+
 export default async (): Promise<string> => {
-  const data = getData();
-
-  data.forEach((d) => {
-    console.log(d);
-  });
-
-  return ``;
+  throw new NotImplementedError(`Unsolved`);
 };
