@@ -1,0 +1,7 @@
+{
+  "name": "@emmettmoore/app",
+  "version": "0.0.1",
+  "scripts": {
+    "types": "tsc --noEmit"
+  }
+}
