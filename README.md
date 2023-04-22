@@ -2,8 +2,8 @@
 
 ## Version
 
-`node.js`: `v18.12.1`
-`npm`: `v8.19.2`
+`node.js`: `v20.0.0`
+`npm`: `v9.6.4`
 
 ## Recommended VSCode Extensions
 
