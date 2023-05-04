@@ -1,6 +1,6 @@
 funtion init_node_monorepo_env() {
   echo "Now using ~/.env-node-monorepo"
-  source /Users/emmett/.env-node-monorepo
+  source ~/.env-node-monorepo
   nvm use v20.0.0
 }
 

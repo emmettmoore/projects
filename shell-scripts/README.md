@@ -19,6 +19,7 @@ To configure this script, add the following to `~/.zsh_functions`
 
 ```sh
 source ~/gh-repos/shell-scripts/env_functions.sh
+source ~/gh-repos/shell-scripts/env_startup.sh
 ```
 
 To use, run `mono`, `aoc`, `app`, or any other environment configured in `env_functions.sh` locally to move into each project with the environment loaded correctly:
