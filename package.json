@@ -1,7 +1,7 @@
 {
   "name": "emmettmoore",
   "version": "1.0.0",
-  "description": "## Version node.js: v18.12.1 npm: v8.19.2",
+  "description": "## Version node.js: v20.0.0 npm: v9.6.4",
   "workspaces": [
     "./@emmettmoore/*"
   ],
@@ -16,7 +16,7 @@
     "url": "git+https://github.com/emmettmoore/node-monorepo.git"
   },
   "author": "",
-  "license": "MIT",
+  "license": "",
   "bugs": {
     "url": "https://github.com/emmettmoore/node-monorepo/issues"
   },
