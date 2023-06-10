@@ -1,5 +1,5 @@
 {
-  "name": "@emmettmoore/app",
+  "name": "@emmettmoore/site",
   "version": "0.0.1",
   "scripts": {
     "build": "NODE_ENV=production next build",
