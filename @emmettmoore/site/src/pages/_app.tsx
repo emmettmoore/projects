@@ -1,8 +1,4 @@
 /* eslint-disable filenames/match-exported */
-import type { AppProps } from 'next/app';
-
-const App = ({ Component, pageProps }: AppProps): JSX.Element => {
-  return <Component {...pageProps} />;
-};
+import App from '@site/containers/App';
 
 export default App;

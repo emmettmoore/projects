@@ -1,0 +1,59 @@
+@use 'sass:list';
+
+@function spacing($values...) {
+  $output-values: ();
+
+  @each $value in $values {
+    $output-values: list.append($output-values, $value * 8px);
+  }
+
+  @return $output-values;
+}
+
+@mixin xsDown {
+  @media (max-width: -0.05px) {
+    @content;
+  }
+}
+
+@mixin xsUp {
+  @media (min-width: 0) {
+    @content;
+  }
+}
+
+@mixin smDown {
+  @media (max-width: 599.95px) {
+    @content;
+  }
+}
+
+@mixin smUp {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin mdDown {
+  @media (max-width: 899.95px) {
+    @content;
+  }
+}
+
+@mixin mdUp {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+
+@mixin lgDown {
+  @media (max-width: 1199.95px) {
+    @content;
+  }
+}
+
+@mixin lgDown {
+  @media (max-width: 1199.95px) {
+    @content;
+  }
+}
