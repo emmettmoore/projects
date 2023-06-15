@@ -1,0 +1,39 @@
+@use 'src/styles/theme';
+
+.noTopPadding {
+  padding-top: 10vh;
+}
+
+.noBottomPadding {
+  padding-bottom: 0;
+}
+
+@include theme.mdUp {
+  .normalTopPadding {
+    padding-top: theme.spacing(4);
+  }
+
+  .normalBottomPadding {
+    padding-bottom: theme.spacing(10);
+  }
+}
+
+@include theme.smUp {
+  .normalTopPadding {
+    padding-top: theme.spacing(3);
+  }
+
+  .normalBottomPadding {
+    padding-bottom: theme.spacing(10);
+  }
+}
+
+@include theme.xsUp {
+  .normalTopPadding {
+    padding-top: theme.spacing(2);
+  }
+
+  .normalBottomPadding {
+    padding-bottom: theme.spacing(8);
+  }
+}

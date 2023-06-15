@@ -52,8 +52,20 @@
   }
 }
 
-@mixin lgDown {
-  @media (max-width: 1199.95px) {
+@mixin lgUp {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin xlDown {
+  @media (max-width: 1535.95px) {
+    @content;
+  }
+}
+
+@mixin xlUp {
+  @media (min-width: 1536px) {
     @content;
   }
 }
