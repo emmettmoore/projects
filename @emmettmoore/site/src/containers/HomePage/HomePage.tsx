@@ -9,6 +9,8 @@ import HtmlHead from '@site/components/HtmlHead';
 // import styles from './HomePage.module.css';
 
 const HomePage = (): JSX.Element => {
+  // Old Site:
+  // https://web.archive.org/web/20211023195451/http://www.emmettwmoore.com/resume/
   return (
     <>
       <HtmlHead
