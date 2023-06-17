@@ -13,14 +13,6 @@
   }
 }
 
-@include theme.smUp {
-  .iconButtonRoot {
-    font-size: theme.spacing(5);
-  }
-}
-
-@include theme.smDown {
-  .iconButtonRoot {
-    font-size: theme.spacing(5);
-  }
+.iconButtonRoot {
+  font-size: theme.spacing(5);
 }
