@@ -1,0 +1,17 @@
+@use 'src/styles/theme';
+
+.contentWrapper {
+  padding-bottom: theme.spacing(18);
+}
+
+.sitePage {
+  position: relative;
+  min-height: 100vh;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: theme.spacing(18);
+}

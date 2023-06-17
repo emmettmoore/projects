@@ -1,10 +1,11 @@
 /* eslint-disable react/jsx-sort-props */
 import { Typography, AppBar, Toolbar } from '@mui/material';
 
-import styles from './SitePage.module.scss';
+import getNavItems from './getNavItems';
 import MobileMenu from './MobileMenu';
 import DesktopMenu from './DesktopMenu';
-import getNavItems from './getNavItems';
+import Footer from './Footer';
+import styles from './SitePage.module.scss';
 
 interface Props {
   children: React.ReactNode;
@@ -13,7 +14,7 @@ interface Props {
 const SitePage = ({ children }: Props): JSX.Element => {
   const navItems = getNavItems();
   return (
-    <>
+    <div className={styles.sitePage}>
       <AppBar color="primary" component="nav" position="sticky">
         <Toolbar className={styles.toolbar}>
           <Typography
@@ -26,8 +27,9 @@ const SitePage = ({ children }: Props): JSX.Element => {
           <MobileMenu navItems={navItems} />
         </Toolbar>
       </AppBar>
-      {children}
-    </>
+      <div className={styles.contentWrapper}>{children}</div>
+      <Footer className={styles.footer} />
+    </div>
   );
 };
 

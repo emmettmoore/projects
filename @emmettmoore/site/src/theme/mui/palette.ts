@@ -8,7 +8,7 @@ export default {
   // https://maketintsandshades.com/#D69408 20% values
   secondary: {
     light: `#DEA939`,
-    main: `#D69408`,
+    main: `#3F4700`, // #D69408`,
     dark: `#AB7606`,
   },
   common: {

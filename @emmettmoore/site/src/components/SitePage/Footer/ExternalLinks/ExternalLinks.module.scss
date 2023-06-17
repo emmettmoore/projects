@@ -1,0 +1,26 @@
+@use 'src/styles/colors';
+@use 'src/styles/theme';
+
+.iconLinkButton {
+  &:hover {
+    color: colors.$secondaryOrangeMain;
+  }
+}
+
+.iconLinkButton {
+  &:hover {
+    color: colors.$secondaryOrangeMain;
+  }
+}
+
+@include theme.smUp {
+  .iconButtonRoot {
+    font-size: theme.spacing(5);
+  }
+}
+
+@include theme.smDown {
+  .iconButtonRoot {
+    font-size: theme.spacing(5);
+  }
+}
