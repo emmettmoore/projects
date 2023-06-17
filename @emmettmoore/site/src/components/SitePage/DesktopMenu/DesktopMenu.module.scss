@@ -1,0 +1,6 @@
+@use 'src/styles/theme';
+
+.desktopMenu > * + * { 
+  margin-left: theme.spacing(2);
+}
+  

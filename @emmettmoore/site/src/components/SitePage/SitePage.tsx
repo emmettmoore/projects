@@ -1,62 +1,29 @@
 /* eslint-disable react/jsx-sort-props */
-import { Box, Typography, AppBar, Toolbar } from '@mui/material';
-
-import UnderlineButton from '@site/components/UnderlineButton';
-import Link from 'next/link';
-import { HomePageRoute, ContactRoute, ResumeRoute } from '@site/common/routes';
+import { Typography, AppBar, Toolbar } from '@mui/material';
 
 import styles from './SitePage.module.scss';
+import MobileMenu from './MobileMenu';
+import DesktopMenu from './DesktopMenu';
+import getNavItems from './getNavItems';
 
 interface Props {
   children: React.ReactNode;
 }
 
-interface NavItem {
-  name: string;
-  path: string;
-}
-
-const getNavItems = (): Array<NavItem> => {
-  return [
-    {
-      name: `Home`,
-      path: HomePageRoute.getPath({}),
-    },
-    {
-      name: `Resume`,
-      path: ResumeRoute.getPath({}),
-    },
-    {
-      name: `Contact`,
-      path: ContactRoute.getPath({}),
-    },
-  ];
-};
-
 const SitePage = ({ children }: Props): JSX.Element => {
+  const navItems = getNavItems();
   return (
     <>
       <AppBar color="primary" component="nav" position="sticky">
         <Toolbar className={styles.toolbar}>
           <Typography
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{ flexGrow: 1, display: { sm: 'block' } }}
             component="div"
             variant="subtitle1">
             Emmett Moore
           </Typography>
-          <Box
-            className={styles.rightSide}
-            sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {getNavItems().map(({ name, path }) => {
-              return (
-                <Link key={name} href={path}>
-                  <UnderlineButton size="small" sx={{ color: '#fff' }}>
-                    {name}
-                  </UnderlineButton>
-                </Link>
-              );
-            })}
-          </Box>
+          <DesktopMenu navItems={navItems} />
+          <MobileMenu navItems={navItems} />
         </Toolbar>
       </AppBar>
       {children}

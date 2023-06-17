@@ -1,0 +1,12 @@
+@use 'src/styles/theme';
+
+.mobileDrawer {
+  min-height: 100%;
+  padding: theme.spacing(1);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
