@@ -1,0 +1,10 @@
+@use 'src/styles/colors';
+
+.underlineButton {
+  border-radius: 0;
+  border-color: colors.$secondaryOrangeMain;
+  border-bottom: 2px solid colors.$primaryBlueMain;
+  &:hover {
+    border-bottom: 2px solid #E08002; // colors.$secondaryOrangeMain;
+  }
+}

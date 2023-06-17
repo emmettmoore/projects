@@ -1,0 +1,6 @@
+@use 'src/styles/theme';
+
+.rightSide > * + * { 
+  margin-left: theme.spacing(1);
+}
+  

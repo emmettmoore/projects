@@ -6,20 +6,20 @@ import PageContent from '@site/components/PageContent';
 
 import HtmlHead from '@site/components/HtmlHead';
 
-const HomePage = (): JSX.Element => {
-  // Old Site:
-  // https://web.archive.org/web/20211023195451/http://www.emmettwmoore.com/resume/
+import styles from './Resume.module.css';
+
+const Resume = (): JSX.Element => {
   return (
     <>
       <HtmlHead
-        description="Personal website for Emmett Moore"
-        title="Emmett Moore"
+        description="Resume for Emmett Moore"
+        title="Emmett Moore | Resume"
       />
       <SitePage>
         <PageContainer>
           <PageContent>
             <Typography component="h1" variant="h3">
-              Emmett Moore
+              Resume
             </Typography>
             <Typography variant="body2">
               Welcome to my corner of the web
@@ -31,4 +31,4 @@ const HomePage = (): JSX.Element => {
   );
 };
 
-export default HomePage;
+export default Resume;
