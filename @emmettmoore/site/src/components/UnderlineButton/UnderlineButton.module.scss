@@ -5,6 +5,6 @@
   border-color: colors.$secondaryOrangeMain;
   border-bottom: 2px solid colors.$primaryBlueMain;
   &:hover {
-    border-bottom: 2px solid #E08002; // colors.$secondaryOrangeMain;
+    border-bottom: 2px solid colors.$secondaryOrangeMain;
   }
 }
