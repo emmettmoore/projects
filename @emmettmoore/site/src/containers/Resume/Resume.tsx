@@ -1,12 +1,19 @@
 /* eslint-disable filenames/match-exported */
-import { Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import SitePage from '@site/components/SitePage';
 import PageContainer from '@site/components/PageContainer';
 import PageContent from '@site/components/PageContent';
 
 import HtmlHead from '@site/components/HtmlHead';
 
-import styles from './Resume.module.css';
+import {
+  NeighborSchools,
+  Tufts,
+  HigherGround,
+  IBM,
+  InsightSquared,
+} from './sections';
+import styles from './Resume.module.scss';
 
 const Resume = (): JSX.Element => {
   return (
@@ -18,12 +25,13 @@ const Resume = (): JSX.Element => {
       <SitePage>
         <PageContainer>
           <PageContent>
-            <Typography component="h1" variant="h3">
-              Resume
-            </Typography>
-            <Typography variant="body2">
-              Welcome to my corner of the web
-            </Typography>
+            <Box className={styles.jobs} sx={{ pt: 2 }}>
+              <HigherGround />
+              <NeighborSchools />
+              <InsightSquared />
+              <IBM />
+              <Tufts />
+            </Box>
           </PageContent>
         </PageContainer>
       </SitePage>

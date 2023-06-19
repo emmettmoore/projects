@@ -18,12 +18,12 @@ export default {
     fontWeight: fonts.weight.header.medium,
   },
   h5: {
-    fontFamily: fonts.family.body,
+    fontFamily: fonts.family.header,
     fontWeight: fonts.weight.header.medium,
   },
   h6: {
     fontFamily: fonts.family.body,
-    fontWeight: fonts.weight.header.medium,
+    fontWeight: fonts.weight.body.medium,
   },
   subtitle1: {
     fontFamily: fonts.family.body,
