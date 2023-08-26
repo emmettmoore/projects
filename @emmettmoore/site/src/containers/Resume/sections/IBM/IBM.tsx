@@ -1,5 +1,3 @@
-import { Typography } from '@mui/material';
-
 import { IBM_LOGO } from '@site/common/static';
 import { OccupationRow } from '../../components';
 
