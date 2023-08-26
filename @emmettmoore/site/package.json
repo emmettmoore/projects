@@ -1,5 +1,5 @@
 {
-  "name": "@emmettmoore/app",
+  "name": "@emmettmoore/site",
   "version": "0.0.1",
   "scripts": {
     "build": "NODE_ENV=production next build",
@@ -11,9 +11,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/cache": "^11.11.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/server": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.12.1",
-    "@next/font": "^13.3.1",
     "classnames": "^2.3.2",
     "next": "^13.3.1",
     "react": "^18.2.0",

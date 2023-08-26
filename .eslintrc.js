@@ -73,7 +73,6 @@ module.exports = {
         '@typescript-eslint/no-unused-vars': `error`,
         '@typescript-eslint/no-use-before-define': `error`,
         '@typescript-eslint/no-useless-constructor': `error`,
-        '@typescript-eslint/quotes': [`error`, `backtick`],
         // More explicit
         'arrow-body-style': [`error`, `always`],
         // More explicit

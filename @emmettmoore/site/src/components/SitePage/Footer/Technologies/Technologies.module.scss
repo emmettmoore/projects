@@ -1,0 +1,16 @@
+@use 'src/styles/theme';
+@use 'src/styles/colors';
+
+.technologies {
+  display: flex;
+  padding-top: theme.spacing(1);
+}
+
+.technologies > * + * {
+  margin-left: theme.spacing(3);
+
+}
+
+.technologies > * > * + * {
+  margin-top: theme.spacing(1);
+}
