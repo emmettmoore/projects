@@ -4,7 +4,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 import { NavItem } from '../getNavItems';
 
-import styles from './MobileMenu.module.scss';
 import MobileDrawer from './MobileDrawer';
 
 interface Props {
