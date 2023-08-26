@@ -6,8 +6,6 @@ import PageContent from '@site/components/PageContent';
 
 import HtmlHead from '@site/components/HtmlHead';
 
-// import styles from './Contact.module.css';
-
 const Contact = (): JSX.Element => {
   return (
     <>
