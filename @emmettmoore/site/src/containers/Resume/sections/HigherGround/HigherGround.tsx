@@ -1,5 +1,3 @@
-import { Typography } from '@mui/material';
-
 import { HGE_LOGO } from '@site/common/static';
 
 import { OccupationRow } from '../../components';
@@ -15,9 +13,8 @@ const HigherGround = (): JSX.Element => {
         width: 120,
       }}
       timespan="August 2022–present"
-      title="Sr. Software Engineer">
-      <Typography variant="body2">lorem ipsum</Typography>
-    </OccupationRow>
+      title="Sr. Software Engineer"
+    />
   );
 };
 

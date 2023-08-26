@@ -14,13 +14,7 @@ const IBM = (): JSX.Element => {
         width: 144,
       }}
       timespan="June 2013—August 2013"
-      title="Software Engineering Intern">
-      <Typography variant="body2">
-        At IBM, I used Component Object Model to facilitate integration of IBM
-        applications and Microsoft Outlook. I also researched open-source
-        solutions to this problem.
-      </Typography>
-    </OccupationRow>
+      title="Software Engineering Intern"></OccupationRow>
   );
 };
 

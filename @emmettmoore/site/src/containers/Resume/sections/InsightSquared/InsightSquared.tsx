@@ -19,8 +19,7 @@ const InsightSquared = (): JSX.Element => {
         InsightSquared provided a web-based business intelligence platform to
         help executives and sales operations leaders make better decisions. At
         InsightSquared, I work as a full-stack engineer building web services
-        that help customers analyze their CRM data and easily manage their
-        portal configurations.
+        that help customers analyze their CRM data.
       </Typography>
       <Typography sx={{ pt: 2 }} variant="subtitle1">
         <b>Technologies Used</b>

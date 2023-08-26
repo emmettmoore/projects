@@ -7,7 +7,7 @@ interface Props {
   acquired?: boolean;
   company: string;
   timespan: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   imageProps: ImageProps;
 }
 
@@ -46,7 +46,7 @@ const OccupationRow = ({
           <Image {...imageProps} />
         </Box>
       </Box>
-      {children}
+      {children ? children : null}
     </Box>
   );
 };
