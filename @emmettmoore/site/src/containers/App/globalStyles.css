@@ -25,3 +25,8 @@ img {
   max-width: 100%;
   display: block;
 }
+
+.mapboxgl-ctrl-bottom-right,
+.mapboxgl-ctrl-bottom-left {
+  display: none;
+}
