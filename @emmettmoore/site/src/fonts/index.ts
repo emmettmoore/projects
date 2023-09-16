@@ -1,6 +1,5 @@
 import lato from './lato';
 
-import saira from './saira';
 import merriweather from './merriweather';
 
-export { lato, saira, merriweather };
+export { lato, merriweather };
