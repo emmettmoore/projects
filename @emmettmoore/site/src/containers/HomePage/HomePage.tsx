@@ -1,5 +1,4 @@
 /* eslint-disable filenames/match-exported */
-import { Typography } from '@mui/material';
 import SitePage from '@site/components/SitePage';
 import PageContainer from '@site/components/PageContainer';
 import PageContent from '@site/components/PageContent';
@@ -18,12 +17,7 @@ const HomePage = (): JSX.Element => {
       <SitePage>
         <PageContainer>
           <PageContent>
-            <Typography component="h1" variant="h3">
-              Emmett Moore
-            </Typography>
-            <Typography variant="body2">
-              Welcome to my corner of the web
-            </Typography>
+            <div />
           </PageContent>
         </PageContainer>
       </SitePage>
