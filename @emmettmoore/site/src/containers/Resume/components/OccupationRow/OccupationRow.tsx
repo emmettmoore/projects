@@ -33,10 +33,10 @@ const OccupationRow = ({
           mb: 2,
         }}>
         <Box sx={{ order: 1 }}>
-          <Typography variant="h5">{company}</Typography>
+          <Typography variant="h3">{company}</Typography>
           <Box>
-            <Typography variant="subtitle1">{title}</Typography>
-            <Typography variant="subtitle2">
+            <Typography variant="body1">{title}</Typography>
+            <Typography variant="caption">
               <em>{acquired ? `${timespan} (acquired)` : timespan}</em>
             </Typography>
           </Box>
