@@ -1,4 +1,6 @@
-import { Typography } from '@mui/material';
+import { Chip, Box } from '@mui/material';
+import classNames from 'classnames';
+import { saira } from '@site/fonts';
 
 import styles from './TechnologiesList.module.scss';
 
@@ -8,15 +10,23 @@ interface Props {
 
 const TechnologiesList = ({ technologies }: Props): JSX.Element => {
   return (
-    <ul className={styles.technologiesList}>
+    <Box
+      sx={{
+        display: `flex`,
+        m: 0,
+        flexWrap: `wrap`,
+        gap: 1,
+      }}>
       {technologies.map((technology) => {
         return (
-          <li key={technology}>
-            <Typography variant="body2">{technology}</Typography>
-          </li>
+          <Chip
+            key={technology}
+            className={classNames(saira.className, styles.chip)}
+            label={technology}
+          />
         );
       })}
-    </ul>
+    </Box>
   );
 };
 

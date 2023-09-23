@@ -1,9 +1,10 @@
-import { merriweather, lato } from '@site/fonts';
+import { saira, merriweather, lato } from '@site/fonts';
 
 export default {
   family: {
     header: merriweather.style.fontFamily,
     body: lato.style.fontFamily,
+    code: saira.style.fontFamily,
   },
 
   weight: {

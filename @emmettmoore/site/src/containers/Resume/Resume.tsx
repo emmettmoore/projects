@@ -10,7 +10,6 @@ import {
   NeighborSchools,
   Tufts,
   HigherGround,
-  IBM,
   InsightSquared,
 } from './sections';
 import styles from './Resume.module.scss';
@@ -29,7 +28,6 @@ const Resume = (): JSX.Element => {
               <HigherGround />
               <NeighborSchools />
               <InsightSquared />
-              <IBM />
               <Tufts />
             </Box>
           </PageContent>

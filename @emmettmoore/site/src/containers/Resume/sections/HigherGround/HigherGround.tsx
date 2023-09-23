@@ -8,9 +8,9 @@ const HigherGround = (): JSX.Element => {
       company="Higher Ground Education"
       imageProps={{
         alt: 'HigherGround Logo',
-        height: 114,
+        height: 96,
         src: HGE_LOGO,
-        width: 120,
+        width: 100,
       }}
       timespan="August 2022–present"
       title="Sr. Software Engineer"

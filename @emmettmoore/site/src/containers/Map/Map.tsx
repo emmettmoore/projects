@@ -57,12 +57,12 @@ const Map = (): JSX.Element => {
     //   .setLngLat(HOMEISH_LOCATION) // Replace with the coordinates of the Paul Revere house
     //   .addTo(map.current);
 
-    // Add a circle marker
-    new mapboxgl.Marker({
-      color: theme.palette.primary.light,
-    })
-      .setLngLat(HOMEISH_LOCATION)
-      .addTo(map.current);
+    // // Add a circle marker
+    // new mapboxgl.Marker({
+    //   color: theme.palette.secondary.light,
+    // })
+    //   .setLngLat(HOMEISH_LOCATION)
+    //   .addTo(map.current);
 
     // Add a transparent circle overlay
     map.current.on(`load` as any, (): void => {
@@ -95,11 +95,11 @@ const Map = (): JSX.Element => {
             fixedRadiusMeters * Math.pow(2, 22),
           ],
           'circle-opacity': 0.3, // Adjust the opacity to make it transparent
-          'circle-color': theme.palette.primary.light, // Customize the circle color
+          'circle-color': theme.palette.secondary.light, // Customize the circle color
         },
       });
     });
-  }, [lat, lng, zoom, theme.palette.primary.light]);
+  }, [lat, lng, zoom, theme.palette.secondary.light]);
 
   return (
     <>

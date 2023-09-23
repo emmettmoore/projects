@@ -28,14 +28,16 @@ const OccupationRow = ({
             xs: `column`,
             sm: `row`,
           },
-          alignItems: { xs: `flex-start`, sm: `center` },
+          alignItems: `flex-start`,
           justifyContent: { xs: ``, sm: `space-between` },
           mb: 2,
         }}>
         <Box sx={{ order: 1 }}>
           <Typography variant="h3">{company}</Typography>
           <Box>
-            <Typography variant="body1">{title}</Typography>
+            <Typography sx={{ mt: 1 }} variant="body1">
+              {title}
+            </Typography>
             <Typography variant="caption">
               <em>{acquired ? `${timespan} (acquired)` : timespan}</em>
             </Typography>

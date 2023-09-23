@@ -9,20 +9,22 @@ const InsightSquared = (): JSX.Element => {
       company="InsightSquared"
       imageProps={{
         alt: 'InsightSquared Logo',
-        height: 108,
+        height: 75,
         src: IS2_LOGO,
-        width: 144,
+        width: 100,
       }}
       timespan="September 2015–October 2018"
       title="Software Engineer">
-      <Typography variant="body2">
-        InsightSquared provided a web-based business intelligence platform to
-        help executives and sales operations leaders make better decisions. At
-        InsightSquared, I work as a full-stack engineer building web services
-        that help customers analyze their CRM data.
+      <Typography paragraph variant="body2">
+        Platform team @ InsightSquared
       </Typography>
-      <Typography sx={{ pt: 2 }} variant="subtitle1">
-        <b>Technologies Used</b>
+      <Typography variant="body2">
+        I worked as a full-stack engineer building web services that help
+        customers analyze their CRM data.
+      </Typography>
+      <Typography variant="body2">
+        business intelligence platform to help executives and sales operations
+        leaders make better decisions.
       </Typography>
       <TechnologiesList
         technologies={[`React.js`, `Django`, `Python`, `AWS`]}
