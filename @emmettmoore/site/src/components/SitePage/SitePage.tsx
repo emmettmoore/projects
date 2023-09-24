@@ -3,7 +3,7 @@ import { useTheme, Box, AppBar, Toolbar } from '@mui/material';
 import Link from 'next/link';
 
 import UnderlineButton from '@site/components/UnderlineButton';
-import { MePageRoute } from '@site/common/routes';
+import { HomePageRoute } from '@site/common/routes';
 
 import getNavItems from './getNavItems';
 import MobileMenu from './MobileMenu';
@@ -23,7 +23,7 @@ const SitePage = ({ children }: Props): JSX.Element => {
       <AppBar color="primary" component="nav" position="sticky">
         <Toolbar>
           <Box sx={{ flexGrow: 1, display: { sm: 'block' } }}>
-            <Link href={MePageRoute.getPath({})}>
+            <Link href={HomePageRoute.getPath({})}>
               <UnderlineButton
                 size="small"
                 sx={{ color: theme.palette.common.white }}>
