@@ -119,9 +119,9 @@ const Media = (): JSX.Element => {
         items={[
           {
             title: `Worry Dream (Bret Victor)`,
-            absoluteUrl: `https://www.worrydream.com`,
+            absoluteUrl: `http://www.worrydream.com`,
           },
-          { title: `Jonathan Tushman`, absoluteUrl: `https://www.tushman.com` },
+          { title: `Jonathan Tushman`, absoluteUrl: `http://www.tushman.com` },
         ]}
       />
     </>

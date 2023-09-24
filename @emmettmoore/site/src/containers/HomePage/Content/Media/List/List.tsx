@@ -14,7 +14,13 @@ const List = ({ items }: Props): JSX.Element => {
         return (
           <li key={title}>
             <Typography variant="body2">
-              {absoluteUrl ? <a href={absoluteUrl}>{title}</a> : title}
+              {absoluteUrl ? (
+                <a href={absoluteUrl} rel="noreferrer" target="_blank">
+                  {title}
+                </a>
+              ) : (
+                title
+              )}
             </Typography>
           </li>
         );
