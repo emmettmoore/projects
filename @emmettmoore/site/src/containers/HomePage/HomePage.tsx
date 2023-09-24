@@ -70,7 +70,7 @@ const HomePage = (): JSX.Element => {
                 </Typography>
               </li>
             </ul>
-            <Typography variant="body2">Things I‘m Learning</Typography>
+            <Typography variant="body2">Things I’m Learning</Typography>
             <ul>
               <li>
                 <Typography variant="body2">AWS Course</Typography>

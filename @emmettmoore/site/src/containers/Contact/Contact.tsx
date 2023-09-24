@@ -20,7 +20,7 @@ const Contact = (): JSX.Element => {
             <Typography variant="h2">Contact Me</Typography>
             <Box sx={{ mt: 4 }}>
               <Typography paragraph variant="body2">
-                Got something to tell me? Prove it!
+                Got something to tell me? Let’s hear it it!
               </Typography>
               <Typography paragraph sx={{ mt: 1 }} variant="body2">
                 Send me a message on <a href={EMMETT_LINKEDIN_URL}>LinkedIn</a>.
