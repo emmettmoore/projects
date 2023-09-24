@@ -30,9 +30,10 @@ const InsightSquared = (): JSX.Element => {
         Full stack web developer @ InsightSquared
       </Typography>
       <Typography paragraph variant="body2">
-        Worked on the platform team to help businesses make better decisions
-        with their CRM data. Learned how to build high impact products from an
-        amazing group of mentors.
+        I worked on the platform team to build new features in our core product,
+        a web platform that helps businesses automatically insights into their
+        CRM data. I learned the principles of B2B SaaS engineering from an
+        amazing team.
       </Typography>
       <TechnologiesList
         technologies={[`React.js`, `Django`, `Python`, `AWS`]}
