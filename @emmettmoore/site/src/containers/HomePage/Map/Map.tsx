@@ -1,9 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
+import { lato } from '@site/fonts';
+import classNames from 'classnames';
 
-import { Typography, useTheme, useMediaQuery } from '@mui/material';
-
-import HtmlHead from '@site/components/HtmlHead';
-import SitePage from '@site/components/SitePage';
+import { useTheme } from '@mui/material';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import mapboxgl from '!mapbox-gl';
@@ -11,27 +10,25 @@ import { Map as Mapbox } from 'mapbox-gl';
 
 import styles from './Map.module.scss';
 
-const HOMEISH_LOCATION: [number, number] = [-71.1281, 42.3815];
+const HOMEISH_LOCATION: [number, number] = [-71.1261, 42.384];
 
 const Map = (): JSX.Element => {
+  const theme = useTheme();
   mapboxgl.accessToken =
     'pk.eyJ1IjoiZW1tZXR0bW9vcmUiLCJhIjoiY2xtbWRzdnI3MGs0NTJybHR1aTl0NmR4cyJ9.FxrZPXxCw4R3KjKngbL4_w';
 
   const mapContainer = useRef(null);
   const map = useRef<Mapbox | null>(null);
-  const [lng, setLng] = useState(-70.9);
-  const [lat, setLat] = useState(42.35);
-  const [zoom, setZoom] = useState(9);
-
-  const theme = useTheme();
-  const isLgUp = useMediaQuery(theme.breakpoints.up('lg'));
+  const [lng, setLng] = useState(-71.1261);
+  const [lat, setLat] = useState(42.384);
+  const [zoom, setZoom] = useState(11);
 
   useEffect(() => {
     if (map.current) {
       return;
     } // initialize map only once
     // Fixed circle radius in meters
-    const fixedRadiusMeters = 0.05; // Adjust as needed
+    const fixedRadiusMeters = 0.1; // Adjust as needed
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v12',
@@ -65,6 +62,7 @@ const Map = (): JSX.Element => {
     //   .addTo(map.current);
 
     // Add a transparent circle overlay
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     map.current.on(`load` as any, (): void => {
       if (!map.current) {
         return;
@@ -102,15 +100,12 @@ const Map = (): JSX.Element => {
   }, [lat, lng, zoom, theme.palette.secondary.light]);
 
   return (
-    <>
-      <HtmlHead description="Map for Emmett Moore" title="Emmett Moore | Map" />
-      <div className={styles.mapWrapper}>
-        <div className={styles.sidebar}>
-          Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
-        </div>
-        <div ref={mapContainer} className={styles.mapContainer} />
+    <div className={styles.mapWrapper}>
+      <div className={classNames(lato.className, styles.sidebar)}>
+        I live here(ish)
       </div>
-    </>
+      <div ref={mapContainer} className={styles.mapContainer} />
+    </div>
   );
 };
 

@@ -11,11 +11,6 @@ const Document = (): JSX.Element => {
           src="https://kit.fontawesome.com/62d9473bb5.js"
           crossOrigin="anonymous"
         />
-        <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
-        <link
-          href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css"
-          rel="stylesheet"
-        />
       </Head>
       <body>
         <Main />

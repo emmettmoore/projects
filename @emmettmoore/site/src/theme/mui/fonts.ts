@@ -6,7 +6,6 @@ export default {
     body: lato.style.fontFamily,
     code: saira.style.fontFamily,
   },
-
   weight: {
     header: {
       medium: 400,

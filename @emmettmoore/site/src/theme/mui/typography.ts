@@ -39,7 +39,7 @@ export default {
   subtitle2: {
     fontFamily: fonts.family.body,
     fontWeight: fonts.weight.body.regular,
-    fontSize: '0.85rem',
+    fontSize: '1rem',
   },
   body1: {
     fontFamily: fonts.family.body,

@@ -1,0 +1,10 @@
+@use 'src/styles/colors';
+
+.chip {
+  &:hover {
+    background-color: rgba(colors.$secondaryOrangeLight, .4);
+  }
+  &.active {
+    background-color: rgba(colors.$secondaryOrangeLight, .6);
+  }
+}
