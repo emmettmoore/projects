@@ -16,19 +16,15 @@ const NeighborSchools = (): JSX.Element => {
         width: 130,
       }}
       timespan="October 2018–August 2022"
-      title="Founding Software Engineer (full-stack)">
+      title="Founding Software Engineer">
       <Typography paragraph variant="body2">
         First engineer @ NeighborSchools
       </Typography>
       <Typography paragraph variant="body2">
-        I designed and implemented our billing infrastructure, created an
-        algorithm to match parents to available daycares, and hired/mentored
-        newer members of the engineering team.
-      </Typography>
-      <Typography paragraph variant="body2">
-        I wrote code every day, working with an incredible GTM, product, and
-        engineering team to to empower child care providers to open and operate
-        home daycare businesses.
+        I designed and implemented our customer billing infrastructure, built
+        out our core marketplace product, and scaled the engineering team. I
+        worked alongside an incredible go-to-market team to empower child care
+        providers to open and operate home daycare businesses.
       </Typography>
       <Typography paragraph variant="body2">
         NeighborSchools was acquired by Higher Ground Education in 2022.

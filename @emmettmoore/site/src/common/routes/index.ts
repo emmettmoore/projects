@@ -1,6 +1,6 @@
-import HomePageRoute from './routes/HomePageRoute';
+import MePageRoute from './routes/MePageRoute';
 import ContactRoute from './routes/ContactRoute';
-import ResumeRoute from './routes/ResumeRoute';
+import MyWorkRoute from './routes/MyWorkRoute';
 import AdminComponentRoute from './routes/AdminComponentRoute';
 
-export { AdminComponentRoute, HomePageRoute, ContactRoute, ResumeRoute };
+export { AdminComponentRoute, MePageRoute, ContactRoute, MyWorkRoute };

@@ -1,7 +1,6 @@
-import { HomePageRoute, ContactRoute, ResumeRoute } from '@site/common/routes';
+import { ContactRoute, MyWorkRoute } from '@site/common/routes';
 
 import {
-  Home as HomeIcon,
   Work as WorkIcon,
   Mail as MailIcon,
   SvgIconComponent,
@@ -16,13 +15,8 @@ export interface NavItem {
 export default (): Array<NavItem> => {
   return [
     {
-      name: `Home`,
-      path: HomePageRoute.getPath({}),
-      Icon: HomeIcon,
-    },
-    {
-      name: `Resume`,
-      path: ResumeRoute.getPath({}),
+      name: `My Work`,
+      path: MyWorkRoute.getPath({}),
       Icon: WorkIcon,
     },
     {

@@ -1,5 +1,5 @@
 import makePageRoute from '../makePageRoute';
 
 export default makePageRoute({
-  path: `/resume`,
+  path: `/work`,
 });

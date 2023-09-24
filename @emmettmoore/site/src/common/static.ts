@@ -4,6 +4,8 @@ export const NEIGHBORSCHOOLS_LOGO = `https://emmettwmoore-assets.s3.us-east-2.am
 
 export const IS2_LOGO = `https://emmettwmoore-assets.s3.us-east-2.amazonaws.com/insightsquared_logo.png`;
 
+export const IS2_LOGO_FULL = `https://emmettwmoore-assets.s3.us-east-2.amazonaws.com/insightsquared-logo-full.png`;
+
 export const IBM_LOGO = `https://emmettwmoore-assets.s3.us-east-2.amazonaws.com/IBM_logo.png`;
 
 export const TUFTS_LOGO = `https://emmettwmoore-assets.s3.us-east-2.amazonaws.com/tufts_logo.png`;

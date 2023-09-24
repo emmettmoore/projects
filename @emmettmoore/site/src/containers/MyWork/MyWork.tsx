@@ -12,14 +12,14 @@ import {
   HigherGround,
   InsightSquared,
 } from './sections';
-import styles from './Resume.module.scss';
+import styles from './MyWork.module.scss';
 
-const Resume = (): JSX.Element => {
+const MyWork = (): JSX.Element => {
   return (
     <>
       <HtmlHead
-        description="Resume for Emmett Moore"
-        title="Emmett Moore | Resume"
+        description="A summary of Emmett Moore's work"
+        title="Emmett Moore | My Work"
       />
       <SitePage>
         <PageContainer>
@@ -37,4 +37,4 @@ const Resume = (): JSX.Element => {
   );
 };
 
-export default Resume;
+export default MyWork;
