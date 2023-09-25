@@ -1,11 +1,16 @@
 import { Box } from '@mui/material';
 
-import InterestsChart from './Chart';
+import { Interests, HomeState, HomeCity, RemoteWork } from './lifeCharts';
+
+import styles from './Charts.module.scss';
 
 const Charts = (): JSX.Element => {
   return (
-    <Box sx={{ display: `block`, minWidth: `100%` }}>
-      <InterestsChart />
+    <Box className={styles.charts} sx={{ display: `block`, width: `100%` }}>
+      <HomeState />
+      <HomeCity />
+      <Interests />
+      <RemoteWork />
     </Box>
   );
 };

@@ -8,7 +8,7 @@ interface Props {
   }>;
 }
 
-const Legend = ({ payload }: Props): JSX.Element | null => {
+const CustomLegend = ({ payload }: Props): JSX.Element | null => {
   if (!payload) {
     return null;
   }
@@ -20,11 +20,12 @@ const Legend = ({ payload }: Props): JSX.Element | null => {
           // eslint-disable-next-line react/no-array-index-key
           <Box key={`item-${index}`} sx={{ display: `flex`, gap: 1 }}>
             <CircleIcon
+              fontSize="small"
               style={{
                 color: entry.color || `#000`,
               }}
             />
-            <Typography component="div" variant="subtitle2">
+            <Typography component="div" variant="body1">
               {entry.value}
             </Typography>
           </Box>
@@ -34,4 +35,4 @@ const Legend = ({ payload }: Props): JSX.Element | null => {
   );
 };
 
-export default Legend;
+export default CustomLegend;

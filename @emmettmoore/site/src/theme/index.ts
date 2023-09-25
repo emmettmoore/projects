@@ -1,3 +1,4 @@
 import { muiTheme } from './mui';
+import colors from './colors';
 
-export { muiTheme };
+export { muiTheme, colors };
