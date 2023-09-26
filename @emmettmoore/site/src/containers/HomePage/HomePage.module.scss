@@ -1,0 +1,12 @@
+@use 'src/styles/theme';
+@use 'src/styles/colors';
+
+.image {
+  border-radius: theme.spacing(2);
+  border: 6px solid colors.$secondaryOrangeMain80;
+}
+
+.charts > * + * {
+  margin-top: theme.spacing(4);
+//   border-top: 1px solid #00000050;
+}

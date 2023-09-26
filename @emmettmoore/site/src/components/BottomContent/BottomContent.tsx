@@ -1,4 +1,4 @@
-import { Divider, Box, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 const BottomContent = (): JSX.Element => {
   return (

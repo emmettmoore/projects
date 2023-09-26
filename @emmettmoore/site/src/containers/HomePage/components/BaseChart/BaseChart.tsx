@@ -32,6 +32,11 @@ interface Props {
     tickFormatter?: (val: number) => string;
     ticks?: Array<number>;
   };
+  yAxisRight: {
+    label?: string;
+    tickFormatter?: (val: number) => string;
+    ticks?: Array<number>;
+  };
   hideLegend?: boolean;
 }
 
@@ -45,12 +50,13 @@ const BaseChart = ({
   data,
   xAxis,
   yAxis,
+  yAxisRight,
   hideLegend = false,
 }: Props): JSX.Element => {
   const theme = useTheme();
   return (
     <>
-      <Typography sx={{ mb: 4 }} variant="h4">
+      <Typography sx={{ pl: `84px`, mb: 4 }} variant="h5">
         {title}
       </Typography>
       <ResponsiveContainer className={styles.responsiveContainer} height={200}>
@@ -65,6 +71,7 @@ const BaseChart = ({
                 stroke={line.color}
                 strokeWidth={2}
                 type="monotone"
+                yAxisId="left"
               />
             );
           })}
@@ -81,6 +88,7 @@ const BaseChart = ({
             ticks={yAxis.ticks || [0, 50, 100]}
             type="number"
             width={79}
+            yAxisId="left"
           />
           <XAxis
             dataKey={xAxis.dataKey}
@@ -97,6 +105,24 @@ const BaseChart = ({
             ticks={xAxis.ticks || getLifeSegments()}
             type="number"
           />
+          {yAxisRight && (
+            <YAxis
+              label={yAxisRight.label}
+              orientation="right"
+              stroke={theme.palette.primary.main}
+              tick={{
+                fill: theme.palette.primary.main,
+                fontFamily: theme.typography.body1.fontFamily,
+                fontSize: theme.typography.body1.fontSize,
+              }}
+              tickCount={yAxisRight.ticks?.length || undefined}
+              tickFormatter={yAxisRight.tickFormatter || undefined}
+              ticks={yAxisRight.ticks || [0, 50, 100]}
+              type="number"
+              width={79}
+              yAxisId="right"
+            />
+          )}
           {!hideLegend && <Legend content={CustomLegend} />}
         </LineChart>
       </ResponsiveContainer>

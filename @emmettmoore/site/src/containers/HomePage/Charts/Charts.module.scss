@@ -1,5 +1,0 @@
-@use 'src/styles/theme';
-
-.charts > * + * {
-  margin-top: theme.spacing(4);
-}

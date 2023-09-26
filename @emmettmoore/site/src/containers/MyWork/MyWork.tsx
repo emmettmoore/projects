@@ -3,6 +3,7 @@ import { Box } from '@mui/material';
 import SitePage from '@site/components/SitePage';
 import PageContainer from '@site/components/PageContainer';
 import PageContent from '@site/components/PageContent';
+import BottomContent from '@site/components/BottomContent';
 
 import HtmlHead from '@site/components/HtmlHead';
 
@@ -24,12 +25,13 @@ const MyWork = (): JSX.Element => {
       <SitePage>
         <PageContainer>
           <PageContent>
-            <Box className={styles.jobs} sx={{ pt: 2 }}>
+            <Box className={styles.jobs} sx={{ pt: 2, mb: 4 }}>
               <HigherGround />
               <NeighborSchools />
               <InsightSquared />
               <Tufts />
             </Box>
+            <BottomContent />
           </PageContent>
         </PageContainer>
       </SitePage>

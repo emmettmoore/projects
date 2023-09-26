@@ -94,36 +94,45 @@ const Media = (): JSX.Element => {
         />
       </Box>
       <List items={books.items} />
-      <Typography variant="h4">How I Stay Informed</Typography>
-      <Box sx={{ display: 'flex', gap: 1, mt: 2, mb: 2 }}>
-        <MediaChip
-          active={weeklyMedia === `podcasts`}
-          label="Podcasts"
-          onClick={(): void => {
-            setWeeklyMedia(`podcasts`);
-          }}
-        />
-        <MediaChip
-          active={weeklyMedia === `newsletters`}
-          label="Newsletters"
-          onClick={(): void => {
-            setWeeklyMedia(`newsletters`);
-          }}
+      <Box sx={{ mt: 8 }}>
+        <Typography variant="h4">How I Stay Informed</Typography>
+        <Box sx={{ display: 'flex', gap: 1, mt: 2, mb: 2 }}>
+          <MediaChip
+            active={weeklyMedia === `podcasts`}
+            label="Podcasts"
+            onClick={(): void => {
+              setWeeklyMedia(`podcasts`);
+            }}
+          />
+          <MediaChip
+            active={weeklyMedia === `newsletters`}
+            label="Newsletters"
+            onClick={(): void => {
+              setWeeklyMedia(`newsletters`);
+            }}
+          />
+        </Box>
+        <List
+          items={
+            weeklyMedia === `podcasts` ? podcasts.items : newsletters.items
+          }
         />
       </Box>
-      <List
-        items={weeklyMedia === `podcasts` ? podcasts.items : newsletters.items}
-      />
-      <Typography variant="h4">Inspiration for this site</Typography>
-      <List
-        items={[
-          {
-            title: `Worry Dream (Bret Victor)`,
-            absoluteUrl: `http://www.worrydream.com`,
-          },
-          { title: `Jonathan Tushman`, absoluteUrl: `http://www.tushman.com` },
-        ]}
-      />
+      <Box sx={{ mt: 8 }}>
+        <Typography variant="h4">Inspiration for this site</Typography>
+        <List
+          items={[
+            {
+              title: `Worry Dream (Bret Victor)`,
+              absoluteUrl: `http://www.worrydream.com`,
+            },
+            {
+              title: `Jonathan Tushman`,
+              absoluteUrl: `http://www.tushman.com`,
+            },
+          ]}
+        />
+      </Box>
     </>
   );
 };

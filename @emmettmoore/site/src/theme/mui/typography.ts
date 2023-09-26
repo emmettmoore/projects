@@ -19,7 +19,7 @@ export default {
   h4: {
     fontFamily: fonts.family.header,
     fontWeight: fonts.weight.header.medium,
-    fontSize: '1.1rem',
+    fontSize: '1rem',
   },
   h5: {
     fontFamily: fonts.family.header,
