@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emmettmoore/node-monorepo.git"
+    "url": "git+https://github.com/emmettmoore/projects.git"
   },
   "author": "",
   "license": "",
   "bugs": {
-    "url": "https://github.com/emmettmoore/node-monorepo/issues"
+    "url": "https://github.com/emmettmoore/projects/issues"
   },
-  "homepage": "https://github.com/emmettmoore/node-monorepo#readme",
+  "homepage": "https://github.com/emmettmoore/projects#readme",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "eslint": "^8.28.0",
