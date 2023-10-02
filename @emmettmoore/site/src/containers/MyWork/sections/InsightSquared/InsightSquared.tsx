@@ -32,8 +32,7 @@ const InsightSquared = (): JSX.Element => {
       <Typography paragraph variant="body2">
         I worked on the platform team to build new features in our core product,
         a web platform that helps businesses automatically insights into their
-        CRM data. I learned the principles of B2B SaaS engineering from an
-        amazing team.
+        CRM data.
       </Typography>
       <TechnologiesList
         technologies={[`React.js`, `Django`, `Python`, `AWS`]}
