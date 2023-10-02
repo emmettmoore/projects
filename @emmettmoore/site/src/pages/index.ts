@@ -1,4 +1,4 @@
 /* eslint-disable filenames/match-exported */
-import MyWork from '@site/containers/MyWork';
+import HomePage from '@site/containers/HomePage';
 
-export default MyWork;
+export default HomePage;

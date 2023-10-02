@@ -7,7 +7,7 @@ const BottomContent = (): JSX.Element => {
         <Typography variant="body2">
           The source for this site lives in my{` `}
           <a
-            href="https://www.github.com/emmettmoore/node-monorepo"
+            href="https://www.github.com/emmettmoore/projects"
             rel="noreferrer"
             target="_blank">
             personal project monorepo.
@@ -16,7 +16,7 @@ const BottomContent = (): JSX.Element => {
           Check it out
           {` `}
           <a
-            href="https://www.github.com/emmettmoore/node-monorepo/@emmettmoore/site"
+            href="https://www.github.com/emmettmoore/projects/@emmettmoore/site"
             rel="noreferrer"
             target="_blank">
             here

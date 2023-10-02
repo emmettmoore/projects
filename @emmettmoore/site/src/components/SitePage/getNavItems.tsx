@@ -1,4 +1,4 @@
-import { HomePageRoute } from '@site/common/routes';
+import { MyWorkRoute } from '@site/common/routes';
 
 import { Work as WorkIcon, SvgIconComponent } from '@mui/icons-material';
 export interface NavItem {
@@ -12,7 +12,7 @@ export default (): Array<NavItem> => {
   return [
     {
       name: `My Work`,
-      path: HomePageRoute.getPath({}),
+      path: MyWorkRoute.getPath({}),
       Icon: WorkIcon,
     },
   ];
