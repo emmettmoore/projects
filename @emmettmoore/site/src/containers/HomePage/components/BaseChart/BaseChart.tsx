@@ -32,7 +32,7 @@ interface Props {
     tickFormatter?: (val: number) => string;
     ticks?: Array<number>;
   };
-  yAxisRight: {
+  yAxisRight?: {
     label?: string;
     tickFormatter?: (val: number) => string;
     ticks?: Array<number>;
@@ -67,6 +67,7 @@ const BaseChart = ({
                 key={line.dataKey}
                 dataKey={line.dataKey}
                 dot={false}
+                isAnimationActive={false}
                 name={line.label}
                 stroke={line.color}
                 strokeWidth={2}
@@ -81,7 +82,7 @@ const BaseChart = ({
             tick={{
               fill: theme.palette.primary.main,
               fontFamily: theme.typography.body1.fontFamily,
-              fontSize: theme.typography.body1.fontSize,
+              fontSize: theme.typography.caption.fontSize,
             }}
             tickCount={yAxis.ticks?.length || undefined}
             tickFormatter={yAxis.tickFormatter || undefined}
@@ -98,7 +99,7 @@ const BaseChart = ({
             tick={{
               fill: theme.palette.primary.main,
               fontFamily: theme.typography.body1.fontFamily,
-              fontSize: theme.typography.body1.fontSize,
+              fontSize: theme.typography.caption.fontSize,
             }}
             tickCount={xAxis.ticks?.length || undefined}
             tickFormatter={xAxis.tickFormatter || undefined}
@@ -112,8 +113,8 @@ const BaseChart = ({
               stroke={theme.palette.primary.main}
               tick={{
                 fill: theme.palette.primary.main,
-                fontFamily: theme.typography.body1.fontFamily,
-                fontSize: theme.typography.body1.fontSize,
+                fontFamily: theme.typography.caption.fontFamily,
+                fontSize: theme.typography.caption.fontSize,
               }}
               tickCount={yAxisRight.ticks?.length || undefined}
               tickFormatter={yAxisRight.tickFormatter || undefined}

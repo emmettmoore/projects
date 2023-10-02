@@ -25,7 +25,7 @@ const CustomLegend = ({ payload }: Props): JSX.Element | null => {
                 color: entry.color || `#000`,
               }}
             />
-            <Typography component="div" variant="body1">
+            <Typography component="div" variant="caption">
               {entry.value}
             </Typography>
           </Box>
