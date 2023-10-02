@@ -12,6 +12,10 @@ interface Props {
 
 const MobileMenu = ({ navItems }: Props): JSX.Element => {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const mobileNavItems = navItems.filter(({ visibility }) => {
+    return visibility.mobile;
+  });
+
   return (
     <>
       <Box sx={{ display: { sm: 'none' } }}>
@@ -26,7 +30,7 @@ const MobileMenu = ({ navItems }: Props): JSX.Element => {
         </IconButton>
       </Box>
       <MobileDrawer
-        navItems={navItems}
+        navItems={mobileNavItems}
         onClose={(): void => {
           setDrawerOpen(false);
         }}
