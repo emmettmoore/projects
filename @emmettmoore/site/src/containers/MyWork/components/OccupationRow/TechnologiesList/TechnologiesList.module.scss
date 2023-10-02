@@ -1,0 +1,6 @@
+@use 'src/styles/theme';
+@use 'src/styles/colors';
+
+.chip {
+  margin-top: theme.spacing(1);
+}

@@ -1,5 +1,9 @@
 /* eslint-disable react/jsx-sort-props */
-import { Typography, AppBar, Toolbar } from '@mui/material';
+import { useTheme, Box, AppBar, Toolbar } from '@mui/material';
+import Link from 'next/link';
+
+import UnderlineButton from '@site/components/UnderlineButton';
+import { HomePageRoute } from '@site/common/routes';
 
 import getNavItems from './getNavItems';
 import MobileMenu from './MobileMenu';
@@ -12,17 +16,21 @@ interface Props {
 }
 
 const SitePage = ({ children }: Props): JSX.Element => {
+  const theme = useTheme();
   const navItems = getNavItems();
   return (
     <div className={styles.sitePage}>
       <AppBar color="primary" component="nav" position="sticky">
-        <Toolbar className={styles.toolbar}>
-          <Typography
-            sx={{ flexGrow: 1, display: { sm: 'block' } }}
-            component="div"
-            variant="subtitle1">
-            Emmett Moore
-          </Typography>
+        <Toolbar>
+          <Box sx={{ flexGrow: 1, display: { sm: 'block' } }}>
+            <Link href={HomePageRoute.getPath({})}>
+              <UnderlineButton
+                size="small"
+                sx={{ color: theme.palette.common.white }}>
+                Emmett Moore
+              </UnderlineButton>
+            </Link>
+          </Box>
           <DesktopMenu navItems={navItems} />
           <MobileMenu navItems={navItems} />
         </Toolbar>

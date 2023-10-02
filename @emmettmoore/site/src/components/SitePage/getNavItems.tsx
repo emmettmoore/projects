@@ -1,9 +1,8 @@
-import { HomePageRoute, ContactRoute, ResumeRoute } from '@site/common/routes';
+import { HomePageRoute, MyWorkRoute } from '@site/common/routes';
 
 import {
   Home as HomeIcon,
   Work as WorkIcon,
-  Mail as MailIcon,
   SvgIconComponent,
 } from '@mui/icons-material';
 export interface NavItem {
@@ -11,6 +10,10 @@ export interface NavItem {
   path: string;
   // eslint-disable-next-line @typescript-eslint/naming-convention
   Icon: SvgIconComponent;
+  visibility: {
+    mobile: boolean;
+    desktop: boolean;
+  };
 }
 
 export default (): Array<NavItem> => {
@@ -19,16 +22,19 @@ export default (): Array<NavItem> => {
       name: `Home`,
       path: HomePageRoute.getPath({}),
       Icon: HomeIcon,
+      visibility: {
+        mobile: true,
+        desktop: false,
+      },
     },
     {
-      name: `Resume`,
-      path: ResumeRoute.getPath({}),
+      name: `My Work`,
+      path: MyWorkRoute.getPath({}),
       Icon: WorkIcon,
-    },
-    {
-      name: `Contact`,
-      path: ContactRoute.getPath({}),
-      Icon: MailIcon,
+      visibility: {
+        mobile: true,
+        desktop: true,
+      },
     },
   ];
 };
