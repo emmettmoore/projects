@@ -1,11 +1,14 @@
 import styles from './PageContent.module.scss';
 import classNames from 'classnames';
 
+import { Box } from '@mui/material';
+
 interface Props {
   bottomPadding?: `normal` | `none`;
   children: React.ReactNode;
   topPadding?: `normal` | `none`;
   className?: string;
+  align?: `left` | `center`;
 }
 
 const PageContent = ({
@@ -13,6 +16,7 @@ const PageContent = ({
   children,
   className,
   topPadding = `normal`,
+  align = `center`,
 }: Props): JSX.Element => {
   const bottomPaddingClasses: { [key in typeof bottomPadding]: string } = {
     normal: styles.normalBottomPadding,
@@ -24,17 +28,33 @@ const PageContent = ({
     none: styles.noTopPadding,
   };
 
-  return (
-    <div
-      className={classNames(
-        styles.pageContent,
-        className,
-        bottomPaddingClasses[bottomPadding],
-        topPaddingClasses[bottomPadding]
-      )}>
-      {children}
-    </div>
-  );
+  const renderContent = (): JSX.Element => {
+    return (
+      <div
+        className={classNames(
+          styles.pageContent,
+          className,
+          bottomPaddingClasses[bottomPadding],
+          topPaddingClasses[bottomPadding]
+        )}>
+        {children}
+      </div>
+    );
+  };
+
+  if (align === `center`) {
+    return (
+      <Box sx={{ margin: `0 auto`, maxWidth: 750 }}>{renderContent()}</Box>
+    );
+  }
+
+  if (align === `left`) {
+    return renderContent();
+  }
+
+  const exhaustiveCheck: never = align;
+
+  return exhaustiveCheck;
 };
 
 export default PageContent;

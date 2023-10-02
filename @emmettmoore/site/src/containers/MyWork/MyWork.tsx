@@ -3,6 +3,7 @@ import { Box } from '@mui/material';
 import SitePage from '@site/components/SitePage';
 import PageContainer from '@site/components/PageContainer';
 import PageContent from '@site/components/PageContent';
+import BottomContent from '@site/components/BottomContent';
 
 import HtmlHead from '@site/components/HtmlHead';
 
@@ -10,28 +11,27 @@ import {
   NeighborSchools,
   Tufts,
   HigherGround,
-  IBM,
   InsightSquared,
 } from './sections';
-import styles from './Resume.module.scss';
+import styles from './MyWork.module.scss';
 
-const Resume = (): JSX.Element => {
+const MyWork = (): JSX.Element => {
   return (
     <>
       <HtmlHead
-        description="Resume for Emmett Moore"
-        title="Emmett Moore | Resume"
+        description="A summary of Emmett Moore's work"
+        title="Emmett Moore | My Work"
       />
       <SitePage>
         <PageContainer>
           <PageContent>
-            <Box className={styles.jobs} sx={{ pt: 2 }}>
+            <Box className={styles.jobs} sx={{ pt: 2, mb: 4 }}>
               <HigherGround />
               <NeighborSchools />
               <InsightSquared />
-              <IBM />
               <Tufts />
             </Box>
+            <BottomContent />
           </PageContent>
         </PageContainer>
       </SitePage>
@@ -39,4 +39,4 @@ const Resume = (): JSX.Element => {
   );
 };
 
-export default Resume;
+export default MyWork;

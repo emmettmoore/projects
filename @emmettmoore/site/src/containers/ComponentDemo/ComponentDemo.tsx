@@ -33,6 +33,12 @@ const ComponentDemo = (): JSX.Element => {
               <Typography component="div" variant="h6">
                 Header 6
               </Typography>
+              <Typography component="div" variant="subtitle1">
+                Subtitle 1
+              </Typography>
+              <Typography component="div" variant="subtitle2">
+                Subtitle 2
+              </Typography>
               <Typography component="div" variant="body1">
                 This is a body1. Water’s like me. It’s lazy ... Boy, it always
                 looks for the easiest way to do things Son of a gun. There isn’t

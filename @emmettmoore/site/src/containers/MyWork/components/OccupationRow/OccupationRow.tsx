@@ -1,11 +1,11 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, useTheme, useMediaQuery } from '@mui/material';
 import React from 'react';
 import Image, { ImageProps } from 'next/image';
 
 interface Props {
   title: string;
   acquired?: boolean;
-  company: string;
+  company?: string;
   timespan: string;
   children?: React.ReactNode;
   imageProps: ImageProps;
@@ -19,6 +19,8 @@ const OccupationRow = ({
   children,
   imageProps,
 }: Props): JSX.Element => {
+  const theme = useTheme();
+  const isSmUp = useMediaQuery(theme.breakpoints.up(`sm`));
   return (
     <Box sx={{ margin: `0 auto`, maxWidth: 750 }}>
       <Box
@@ -28,14 +30,18 @@ const OccupationRow = ({
             xs: `column`,
             sm: `row`,
           },
-          alignItems: { xs: `flex-start`, sm: `center` },
+          alignItems: `flex-start`,
           justifyContent: { xs: ``, sm: `space-between` },
           mb: 2,
         }}>
         <Box sx={{ order: 1 }}>
-          <Typography variant="h3">{company}</Typography>
+          {isSmUp && company && (
+            <Typography sx={{ mb: 1 }} variant="h3">
+              {company}
+            </Typography>
+          )}
           <Box>
-            <Typography variant="body1">{title}</Typography>
+            <Typography variant="h5">{title}</Typography>
             <Typography variant="caption">
               <em>{acquired ? `${timespan} (acquired)` : timespan}</em>
             </Typography>
