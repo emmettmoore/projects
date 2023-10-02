@@ -1,6 +1,6 @@
-funtion init_node_monorepo_env() {
-  echo "Now using ~/.env-node-monorepo"
-  source ~/.env-node-monorepo
+funtion init_projects_env() {
+  echo "Now using ~/.env-projects"
+  source ~/.env-projects
   nvm use v20.0.0
 }
 
@@ -13,44 +13,44 @@ funtion init_node_monorepo_env() {
 #    /gh-repo-2       <---- GH repo
 #    /etc
 
-function mono() {
+function pjs() {
   should_update=false
 
-  if [[ $PWD/ != ~/gh-repos/node-monorepo/* ]]; then
+  if [[ $PWD/ != ~/gh-repos/projects/* ]]; then
     should_update=true
   fi
 
-  cd ~/gh-repos/node-monorepo
+  cd ~/gh-repos/projects
 
   if [ "$should_update" = true ] ; then
-    init_node_monorepo_env
+    init_projects_env
   fi
 }
 
 function aoc() {
   should_update=false
 
-  if [[ $PWD/ != ~/gh-repos/node-monorepo/* ]]; then
+  if [[ $PWD/ != ~/gh-repos/projects/* ]]; then
     should_update=true
   fi
 
-  cd ~/gh-repos/node-monorepo/@emmettmoore/advent-of-code
+  cd ~/gh-repos/projects/@emmettmoore/advent-of-code
 
   if [ "$should_update" = true ] ; then
-    init_node_monorepo_env
+    init_projects_env
   fi
 }
 
-function app() {
+function site() {
   should_update=false
 
-  if [[ $PWD/ != ~/gh-repos/node-monorepo/* ]]; then
+  if [[ $PWD/ != ~/gh-repos/projects/* ]]; then
     should_update=true
   fi
 
-  cd ~/gh-repos/node-monorepo/@emmettmoore/app
+  cd ~/gh-repos/projects/@emmettmoore/site
 
   if [ "$should_update" = true ] ; then
-    init_node_monorepo_env
+    init_projects_env
   fi
 }
