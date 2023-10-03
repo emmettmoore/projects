@@ -1,0 +1,7 @@
+@use 'src/styles/theme';
+@use 'src/styles/colors';
+
+.image {
+  border-radius: theme.spacing(2);
+  border: 6px solid colors.$secondaryOrangeMain80;
+}
