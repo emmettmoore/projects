@@ -4,6 +4,7 @@ import getInterestsData from './getInterestsData';
 import { colors } from '@site/theme';
 
 import { getYAxisTicks } from './utils';
+import { get30YearAdjustedAgeFormatter } from '../utils';
 
 const Interests = (): JSX.Element => {
   const theme = useTheme();
@@ -38,6 +39,7 @@ const Interests = (): JSX.Element => {
         dataKey: `age`,
         label: `Age`,
         ticks: [0, 6, 12, 18, 24, 30],
+        tickFormatter: get30YearAdjustedAgeFormatter(),
       }}
       yAxis={{
         ticks: getYAxisTicks(),

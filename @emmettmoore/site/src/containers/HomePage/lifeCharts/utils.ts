@@ -7,3 +7,9 @@ export const get18AdjustedAgeFormatter = (): ((val: number) => string) => {
     return `${val + 2015}`;
   };
 };
+
+export const get30YearAdjustedAgeFormatter = (): ((val: number) => string) => {
+  return (val: number): string => {
+    return `${val + 1993}`;
+  };
+};
