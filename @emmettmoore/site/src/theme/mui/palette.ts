@@ -1,16 +1,16 @@
 export default {
   // https://maketintsandshades.com/#080047 20% values
   primary: {
-    light: `#39336C`,
-    main: `#080047`,
-    dark: `#060039`,
+    light: `#dc7074`,
+    main: `#d34c51`,
+    dark: `#a93d41`,
   },
-  // https://maketintsandshades.com/#D69408 20% values
-  // https://maketintsandshades.com/#E09002 20% values
+
+  // https://maketintsandshades.com/#453384 20% values
   secondary: {
-    light: `#FF9900`,
-    main: `#E08002`,
-    dark: `#b36602`,
+    light: `#6a5c9d`,
+    main: `#453384`,
+    dark: `#37296a`,
   },
   common: {
     black: `#000`,
