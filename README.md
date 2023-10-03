@@ -4,9 +4,9 @@ This is a monorepo containing all of my personal projects:
 
 ## Projects
 
-[Next.js Personal Site](/@emmettmoore/site/README.md)
-[Advent of Code Solving Environment and Solutions](/@emmettmoore/advent-of-code/README.md)
-[Environment Management Shell Scripts](/shell-scripts/README.md)
+- [Next.js Personal Site](/@emmettmoore/site/README.md)
+- [Advent of Code Solving Environment and Solutions](/@emmettmoore/advent-of-code/README.md)
+- [Environment Management Shell Scripts](/shell-scripts/README.md)
 
 ## Docs Links
 
