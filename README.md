@@ -1,4 +1,4 @@
-# node-monorepo
+# projects
 
 ## Version
 

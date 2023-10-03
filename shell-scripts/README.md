@@ -26,9 +26,9 @@ To use, run `mono`, `aoc`, `app`, or any other environment configured in `env_fu
 
 ```sh
 ➜  ~ mono
-Now using ~/.env-node-monorepo
+Now using ~/.env-projects
 Now using node v20.0.0 (npm v9.6.4)
-➜  node-monorepo git:(emmmett/next-app) ✗ aoc
+➜  projects git:(emmmett/next-app) ✗ aoc
 ```
 
 ### `new_component.sh`

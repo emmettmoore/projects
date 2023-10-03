@@ -12,11 +12,16 @@ interface Props {
 
 const DesktopMenu = ({ navItems }: Props): JSX.Element => {
   const theme = useTheme();
+
+  const desktopNavItems = navItems.filter(({ visibility }) => {
+    return visibility.desktop;
+  });
+
   return (
     <Box
       className={styles.desktopMenu}
       sx={{ display: { xs: 'none', sm: 'block' } }}>
-      {navItems.map(({ name, path }) => {
+      {desktopNavItems.map(({ name, path }) => {
         return (
           <Link key={name} href={path}>
             <UnderlineButton

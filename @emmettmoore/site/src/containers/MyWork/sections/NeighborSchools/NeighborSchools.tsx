@@ -22,9 +22,7 @@ const NeighborSchools = (): JSX.Element => {
       </Typography>
       <Typography paragraph variant="body2">
         I designed and implemented our customer billing infrastructure, built
-        out our core marketplace product, and scaled the engineering team. I
-        worked alongside an incredible go-to-market team to empower child care
-        providers to open and operate home daycare businesses.
+        out our core marketplace product, and scaled the engineering team.
       </Typography>
       <Typography paragraph variant="body2">
         NeighborSchools was acquired by Higher Ground Education in 2022.

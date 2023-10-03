@@ -4,10 +4,10 @@ const BottomContent = (): JSX.Element => {
   return (
     <>
       <Box sx={{ pt: 1, borderTop: `2px solid #00000050`, textAlign: `right` }}>
-        <Typography variant="body2">
+        <Typography sx={{ mb: 1 }} variant="body2">
           The source for this site lives in my{` `}
           <a
-            href="https://www.github.com/emmettmoore/node-monorepo"
+            href="https://www.github.com/emmettmoore/projects"
             rel="noreferrer"
             target="_blank">
             personal project monorepo.
@@ -16,7 +16,7 @@ const BottomContent = (): JSX.Element => {
           Check it out
           {` `}
           <a
-            href="https://www.github.com/emmettmoore/node-monorepo/@emmettmoore/site"
+            href="https://www.github.com/emmettmoore/projects/@emmettmoore/site"
             rel="noreferrer"
             target="_blank">
             here
