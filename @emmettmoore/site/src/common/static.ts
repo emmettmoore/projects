@@ -9,3 +9,5 @@ export const IS2_LOGO_FULL = `https://emmettwmoore-assets.s3.us-east-2.amazonaws
 export const IBM_LOGO = `https://emmettwmoore-assets.s3.us-east-2.amazonaws.com/IBM_logo.png`;
 
 export const TUFTS_LOGO = `https://emmettwmoore-assets.s3.us-east-2.amazonaws.com/tufts_logo.png`;
+
+export const EMMETT_AND_ROCKY = `https://emmettwmoore-assets.s3.us-east-2.amazonaws.com/emmett-and-rocky.png`;
