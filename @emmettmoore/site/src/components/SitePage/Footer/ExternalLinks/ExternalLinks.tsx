@@ -20,6 +20,7 @@ const ExternalLinks = (): JSX.Element => {
         }}
         className={styles.iconLinkButton}
         component={Link}
+        disableRipple
         href={EMMETT_GITHUB_URL}
         size="large"
         sx={{ color: `white` }}
@@ -32,6 +33,7 @@ const ExternalLinks = (): JSX.Element => {
         }}
         className={styles.iconLinkButton}
         component={Link}
+        disableRipple
         href={EMMETT_LINKEDIN_URL}
         size="large"
         sx={{ color: `white` }}

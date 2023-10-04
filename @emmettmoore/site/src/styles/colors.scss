@@ -1,15 +1,11 @@
-// https://coolors.co/palettes/popular/#d34c51
-$primaryBlueLight: #dc7074;
-// https://coolors.co/3e92cc-2a628f-13293d-16324f-18435a
-// $primaryBlueMain: #004b8b;
-// $primaryBlueMain: #3E92CC;
-// $primaryBlueMain: #2A628F; # lapis lazuli 
-$primaryBlueLight: #5581a5;
-$primaryBlueMain:#2A628F;
-$primaryBlueDark: #224e72;
-$secondaryOrangeMain: #E4C618;
-$secondaryOrangeMain80: #E4C61880;
-// $secondaryOrangeMain: #E08002;
-// $secondaryOrangeMain80: #E0800280;
-$secondaryOrangeLight: #e5be42;
-$white: #fff;
+$primaryLight: #5581a5;
+$primaryMain:#2A628F;
+$primaryDark: #224e72;
+
+$secondaryLight: #e5be42;
+$secondaryMain: #dfae13;
+$secondaryMainDark: #b28b0f;
+$secondaryLight80: #E4C61880;
+
+$commonBlack: #000;
+$commonWhite: #fff;

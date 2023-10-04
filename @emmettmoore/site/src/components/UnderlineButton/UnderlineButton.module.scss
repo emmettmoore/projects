@@ -2,10 +2,10 @@
 
 .underlineButton {
   border-radius: 0;
-  border-color: colors.$secondaryOrangeMain;
-  border-bottom: 2px solid colors.$primaryBlueMain;
+  border-color: colors.$secondaryMain;
+  border-bottom: 2px solid colors.$primaryMain;
   &:hover {
-    border-bottom: 2px solid colors.$secondaryOrangeMain;
+    border-bottom: 2px solid colors.$secondaryMain;
     border-radius: 0;
   }
 }
