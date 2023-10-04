@@ -5,7 +5,7 @@ export default {
   styleOverrides: {
     root: {
       fontFamily: fonts.family.code,
-      backgroundColor: `${palette.secondary.light}25`,
+      backgroundColor: `${palette.secondary.light}80`,
     },
   },
 };

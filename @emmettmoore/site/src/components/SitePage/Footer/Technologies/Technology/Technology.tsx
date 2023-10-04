@@ -8,7 +8,7 @@ interface Props {
 
 const Technology = ({ children }: Props): JSX.Element => {
   return (
-    <Typography component="div" sx={{ color: 'white' }} variant="subtitle2">
+    <Typography component="div" sx={{ color: 'white' }} variant="body1">
       {children}
     </Typography>
   );
