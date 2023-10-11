@@ -7,7 +7,7 @@ import styles from './SelfImage.module.scss';
 const SelfImage = (): JSX.Element => {
   return (
     <Image
-      alt="Me and my cat"
+      alt="Picture of Emmett climbing"
       className={styles.image}
       height={427}
       src={EMMETT_GREEN_CLIFF}
