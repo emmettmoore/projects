@@ -1,6 +1,5 @@
 /* eslint-disable filenames/match-exported */
-import { Typography } from '@mui/material';
-import PageContainer from '@site/components/PageContainer';
+import { Container, Typography } from '@mui/material';
 import HtmlHead from '@site/components/HtmlHead';
 import PageContent from '@site/components/PageContent';
 import SitePage from '@site/components/SitePage';
@@ -12,7 +11,7 @@ const ComponentDemo = (): JSX.Element => {
     <>
       <HtmlHead description="MUI component demo" title="Component Demo" />
       <SitePage>
-        <PageContainer>
+        <Container>
           <PageContent>
             <div className={styles.componentDemo}>
               <Typography component="div" variant="h1">
@@ -62,7 +61,7 @@ const ComponentDemo = (): JSX.Element => {
               </Typography>
             </div>
           </PageContent>
-        </PageContainer>
+        </Container>
       </SitePage>
     </>
   );
