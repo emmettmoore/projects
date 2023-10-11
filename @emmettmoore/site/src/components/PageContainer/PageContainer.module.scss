@@ -1,9 +1,0 @@
-@use 'src/styles/theme';
-
-@include theme.lgUp {
-  .leftAligned {
-    margin-left: theme.spacing(11);
-    margin-right: 0;
-    width: auto;
-  }
-}

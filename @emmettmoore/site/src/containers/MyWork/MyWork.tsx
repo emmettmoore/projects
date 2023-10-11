@@ -1,7 +1,6 @@
 /* eslint-disable filenames/match-exported */
-import { Box } from '@mui/material';
+import { Container, Box } from '@mui/material';
 import SitePage from '@site/components/SitePage';
-import PageContainer from '@site/components/PageContainer';
 import PageContent from '@site/components/PageContent';
 import BottomContent from '@site/components/BottomContent';
 
@@ -23,7 +22,7 @@ const MyWork = (): JSX.Element => {
         title="Emmett Moore | My Work"
       />
       <SitePage>
-        <PageContainer>
+        <Container>
           <PageContent>
             <Box className={styles.jobs} sx={{ pt: 2, mb: 4 }}>
               <HigherGround />
@@ -33,7 +32,7 @@ const MyWork = (): JSX.Element => {
             </Box>
             <BottomContent />
           </PageContent>
-        </PageContainer>
+        </Container>
       </SitePage>
     </>
   );
