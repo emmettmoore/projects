@@ -1,8 +1,7 @@
 /* eslint-disable filenames/match-exported */
 import SitePage from '@site/components/SitePage';
-import { useTheme, useMediaQuery } from '@mui/material';
+import { Container, useTheme, useMediaQuery } from '@mui/material';
 
-import PageContainer from '@site/components/PageContainer';
 import PageContent from '@site/components/PageContent';
 import DesktopLayout from './DesktopLayout';
 import MobileLayout from './MobileLayout';
@@ -17,11 +16,11 @@ const HomePage = (): JSX.Element => {
     <>
       <Head />
       <SitePage>
-        <PageContainer>
-          <PageContent align="left">
+        <Container>
+          <PageContent>
             {isMdDown ? <MobileLayout /> : <DesktopLayout />}
           </PageContent>
-        </PageContainer>
+        </Container>
       </SitePage>
     </>
   );
