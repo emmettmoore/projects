@@ -34,10 +34,10 @@ const run = async (problem: string): Promise<void> => {
 
   let part2: string | number;
   try {
-    console.time(`Execution Time`);
+    console.time(`Execution Time 2`);
     part2 = await solution.part2();
     console.log(`Part2: ${part2}`);
-    console.timeEnd(`Execution Time`);
+    console.timeEnd(`Execution Time 2`);
   } catch (err) {
     if (err instanceof NotImplementedError) {
       part2 = `Not implemented`;
